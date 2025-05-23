@@ -1,1 +1,14 @@
 *.pyc
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Local data or cache folders
+metamotivo-S-1-datasets/
+
+# Python virtual environment
+metamotivo-py310/
+
+# Ignore compiled Python files
+*.pyc
+__pycache__/
