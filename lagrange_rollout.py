@@ -117,11 +117,11 @@ if __name__ == "__main__":
 
     # Save video
     os.makedirs("videos", exist_ok=True)
-    video_path = f"videos/metamotivo_task_{task}.mp4"
+    video_path = f"videos/metamotivo_task_{task}_lagrange.mp4"
     media.write_video(video_path, frames, fps=30)
 
     # Print results
     print(f"✅ Finished rollout for task: {task}")
     print(f"🎯 Total reward: {task_reward}")
-    print(f"⚠️ Total cost (dimension {specific_dimensions[0]} > {sample_range[0]}): {task_cost}")
+    print(f"⚠️ Total cost: {task_cost}")
     print(f"📹 Video saved at: {video_path}")
