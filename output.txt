@@ -1,0 +1,5 @@
+Task: raisearms-m-l
+✅ Finished rollout for task: raisearms-m-l
+🎯 Total reward: 110.06656101899969
+⚠️ Total cost: 3844.5531611362817
+📹 Video saved at: videos/metamotivo_task_raisearms-m-l_lagrange.mp4

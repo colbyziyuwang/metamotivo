@@ -31,7 +31,7 @@ if __name__ == "__main__":
     buffer.extend(data)
 
     # Setup model and task
-    task = STANDARD_TASKS[1]
+    task = STANDARD_TASKS[25]
     print("Task:", task)
     device = "cpu"
     model = FBcprModel.from_pretrained("facebook/metamotivo-S-1", device=device)
@@ -62,13 +62,21 @@ if __name__ == "__main__":
     specific_dimensions = [-1]
     sample_range = [-1.0, 1.0]
 
-    observation_c_z = z.clone()
-    for dim in specific_dimensions:
-        random_samples = np.random.uniform(sample_range[0], sample_range[1], size=observation_c_z.shape[0])
-        observation_c_z[:, dim] = torch.tensor(random_samples, dtype=torch.float32).to(observation_c_z.device)
+    observation_c_z = observation.copy()
 
-    reward_term = 10 * (torch.tensor(random_samples, dtype=torch.float32).to(observation_c_z.device).unsqueeze(1) - sample_range[0])
-    c_z = model.reward_wr_inference(observation_c_z, reward_term)
+    # Generate new random values for the specific dimensions
+    for dim in specific_dimensions:
+        observation_c_z[dim] = np.random.uniform(sample_range[0], sample_range[1])
+
+    # Convert to torch tensor
+    observation_c_z_tensor = torch.tensor(observation_c_z.reshape(1, -1), dtype=torch.float32)
+
+    # Extract the modified values for those dimensions to compute reward_term
+    modified_values = observation_c_z_tensor[:, specific_dimensions]
+    reward_term = 10 * (modified_values - sample_range[0])
+
+    # Run reward inference to get c_z
+    c_z = model.reward_inference(observation_c_z_tensor, reward_term)
 
     # Lagrange multiplier search
     lagrange_Min, lagrange_Max = 0, 10
@@ -77,17 +85,22 @@ if __name__ == "__main__":
     lagrange_max = lagrange_Max
     lagrange_multiplier = np.random.uniform(lagrange_min, lagrange_max)
 
-    obs_torch = torch.as_tensor(observation["observations"], dtype=torch.float32, device=z.device).unsqueeze(0)
+    obs_torch = torch.as_tensor(observation, dtype=torch.float32, device=z.device).unsqueeze(0)
 
     with torch.no_grad():
         while abs(lagrange_max - lagrange_min) > 1e-5:
             Z_lambda_c = z - lagrange_multiplier * c_z
-            action = model.actor(obs_torch, Z_lambda_c, std=0.0)
+            action = model.act(obs=obs_torch, z=Z_lambda_c).ravel()  # shape: [action_dim]
+    
+            # Unsqueeze for critic
+            Z_lambda_c = Z_lambda_c.unsqueeze(0)                     # [1, z_dim]
+            action = action.unsqueeze(0).unsqueeze(0)                # [1, 1, action_dim]
+
             Q = model.critic(obs_torch, Z_lambda_c, action).squeeze()
 
-            if abs(Q.item() - eta) < 1e-2:
+            if abs(Q.mean().item() - eta) < 1e-2:
                 break
-            elif Q.item() > eta:
+            elif Q.mean().item() > eta:
                 lagrange_min = lagrange_multiplier
             else:
                 lagrange_max = lagrange_multiplier
@@ -104,7 +117,7 @@ if __name__ == "__main__":
     while not done:
         Z_lambda_c = z - lagrange_multiplier * c_z
         obs = torch.tensor(observation.reshape(1, -1), dtype=torch.float32, device=z.device)
-        action = model.actor(obs, Z_lambda_c, std=0.0).ravel().numpy()
+        action = rew_model.act(obs, Z_lambda_c).ravel()
         observation, reward, terminated, truncated, info = env.step(action)
 
         task_reward += reward
