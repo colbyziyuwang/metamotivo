@@ -1,0 +1,7 @@
+root_h_obs: (1, 1)
+local_body_pos: (1, 69) -> 23 * 3
+local_body_rot_obs: (1, 144) -> 24 * 6 (rotation matrix)
+local_body_vel: (1, 72) -> 24 * 3
+local_body_ang_vel: (1, 72) -> 24 * 3
+
+24 bodies including root
