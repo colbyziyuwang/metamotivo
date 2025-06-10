@@ -12,3 +12,5 @@ metamotivo-py310/
 # Ignore compiled Python files
 *.pyc
 __pycache__/
+
+videos/
