@@ -10,6 +10,8 @@ from metamotivo.fb_cpr.huggingface import FBcprModel
 from metamotivo.wrappers.humenvbench import RewardWrapper
 from metamotivo.buffers.buffers import DictBuffer
 
+from set_seed import set_seed
+
 os.environ["OMP_NUM_THREADS"] = "1"
 
 if __name__ == "__main__":
@@ -51,8 +53,8 @@ if __name__ == "__main__":
             task_costs = []
 
             for seed in range(5):
-                np.random.seed(seed)
-                env, _ = make_humenv(num_envs=1, task=task, state_init="DefaultAndFall",
+                set_seed(seed)
+                env, _ = make_humenv(num_envs=1, task=task, state_init="DefaultAndFall", seed=seed,
                                      wrappers=[gymnasium.wrappers.FlattenObservation])
                 observation, info = env.reset(seed=seed)
                 done = False
@@ -62,7 +64,7 @@ if __name__ == "__main__":
 
                 while not done:
                     obs_tensor = torch.tensor(observation.reshape(1, -1), dtype=torch.float32, device=rew_model.device)
-                    action = rew_model.act(obs=obs_tensor, z=z).ravel()
+                    action = rew_model.act(obs=obs_tensor, z=z, mean=True).ravel()
                     observation, reward, terminated, truncated, info = env.step(action)
                     done = bool(terminated or truncated)
                     total_reward += reward
