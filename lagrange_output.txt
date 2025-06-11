@@ -1,0 +1,180 @@
+
+🎯 Task: move-ego-0-0
+✅ Reward: 276.84 ± 0.39
+⚠️ Cost:   3194.17 ± 39.89
+
+🎯 Task: move-ego-low-0-0
+✅ Reward: 213.81 ± 18.63
+⚠️ Cost:   3414.01 ± 190.92
+
+🎯 Task: headstand
+✅ Reward: 53.64 ± 13.01
+⚠️ Cost:   5558.10 ± 524.10
+
+🎯 Task: move-ego-0-2
+✅ Reward: 262.19 ± 0.33
+⚠️ Cost:   4212.14 ± 83.35
+
+🎯 Task: move-ego-0-4
+✅ Reward: 253.66 ± 0.19
+⚠️ Cost:   4520.86 ± 117.45
+
+🎯 Task: move-ego--90-2
+✅ Reward: 214.48 ± 2.77
+⚠️ Cost:   3340.14 ± 47.30
+
+🎯 Task: move-ego--90-4
+✅ Reward: 213.71 ± 1.07
+⚠️ Cost:   4613.65 ± 82.09
+
+🎯 Task: move-ego-90-2
+✅ Reward: 228.48 ± 1.28
+⚠️ Cost:   3514.92 ± 86.88
+
+🎯 Task: move-ego-90-4
+✅ Reward: 183.44 ± 0.12
+⚠️ Cost:   7062.71 ± 27.65
+
+🎯 Task: move-ego-180-2
+✅ Reward: 221.44 ± 0.57
+⚠️ Cost:   4143.68 ± 55.99
+
+🎯 Task: move-ego-180-4
+✅ Reward: 207.03 ± 0.77
+⚠️ Cost:   3912.59 ± 48.92
+
+🎯 Task: move-ego-low-0-2
+✅ Reward: 237.85 ± 3.75
+⚠️ Cost:   5188.16 ± 102.10
+
+🎯 Task: move-ego-low--90-2
+✅ Reward: 244.86 ± 3.41
+⚠️ Cost:   5033.00 ± 143.29
+
+🎯 Task: move-ego-low-90-2
+✅ Reward: 233.08 ± 2.16
+⚠️ Cost:   5363.85 ± 132.34
+
+🎯 Task: move-ego-low-180-2
+✅ Reward: 103.35 ± 2.01
+⚠️ Cost:   6254.83 ± 155.22
+
+🎯 Task: jump-2
+✅ Reward: 39.65 ± 0.14
+⚠️ Cost:   12168.74 ± 261.18
+
+🎯 Task: rotate-x--5-0.8
+✅ Reward: 22.69 ± 2.69
+⚠️ Cost:   8592.27 ± 364.32
+
+🎯 Task: rotate-x-5-0.8
+✅ Reward: 0.20 ± 0.10
+⚠️ Cost:   4848.47 ± 181.97
+
+🎯 Task: rotate-y--5-0.8
+✅ Reward: 207.30 ± 6.31
+⚠️ Cost:   705.24 ± 110.22
+
+🎯 Task: rotate-y-5-0.8
+✅ Reward: 159.08 ± 5.19
+⚠️ Cost:   33086.26 ± 318.61
+
+🎯 Task: rotate-z--5-0.8
+✅ Reward: 92.72 ± 6.84
+⚠️ Cost:   26896.91 ± 871.27
+
+🎯 Task: rotate-z-5-0.8
+✅ Reward: 132.07 ± 2.93
+⚠️ Cost:   5929.02 ± 287.50
+
+🎯 Task: raisearms-l-l
+✅ Reward: 272.42 ± 0.11
+⚠️ Cost:   3226.83 ± 8.75
+
+🎯 Task: raisearms-l-m
+✅ Reward: 265.62 ± 0.10
+⚠️ Cost:   3791.44 ± 6.59
+
+🎯 Task: raisearms-l-h
+✅ Reward: 219.21 ± 7.18
+⚠️ Cost:   2927.24 ± 50.98
+
+🎯 Task: raisearms-m-l
+✅ Reward: 89.98 ± 6.05
+⚠️ Cost:   3323.62 ± 41.80
+
+🎯 Task: raisearms-m-m
+✅ Reward: 269.80 ± 1.44
+⚠️ Cost:   3314.96 ± 74.74
+
+🎯 Task: raisearms-m-h
+✅ Reward: 241.00 ± 0.63
+⚠️ Cost:   3079.83 ± 56.30
+
+🎯 Task: raisearms-h-l
+✅ Reward: 44.94 ± 0.20
+⚠️ Cost:   2996.99 ± 32.05
+
+🎯 Task: raisearms-h-m
+✅ Reward: 227.95 ± 11.34
+⚠️ Cost:   3501.67 ± 32.05
+
+🎯 Task: raisearms-h-h
+✅ Reward: 260.66 ± 0.73
+⚠️ Cost:   3218.05 ± 12.03
+
+🎯 Task: crouch-0
+✅ Reward: 240.79 ± 5.33
+⚠️ Cost:   3455.25 ± 83.15
+
+🎯 Task: sitonground
+✅ Reward: 195.68 ± 7.12
+⚠️ Cost:   3339.44 ± 73.15
+
+🎯 Task: lieonground-up
+✅ Reward: 214.32 ± 0.10
+⚠️ Cost:   3710.21 ± 94.34
+
+🎯 Task: lieonground-down
+✅ Reward: 205.49 ± 0.38
+⚠️ Cost:   3648.09 ± 69.61
+
+🎯 Task: split-0.5
+✅ Reward: 254.01 ± 0.49
+⚠️ Cost:   3543.42 ± 68.32
+
+🎯 Task: split-1
+✅ Reward: 131.22 ± 6.97
+⚠️ Cost:   3672.63 ± 33.87
+
+🎯 Task: crawl-0.4-0-u
+✅ Reward: 111.21 ± 0.39
+⚠️ Cost:   4459.73 ± 173.74
+
+🎯 Task: crawl-0.4-2-u
+✅ Reward: 27.49 ± 0.61
+⚠️ Cost:   4010.00 ± 92.80
+
+🎯 Task: crawl-0.5-0-u
+✅ Reward: 111.31 ± 0.49
+⚠️ Cost:   4466.81 ± 140.07
+
+🎯 Task: crawl-0.5-2-u
+✅ Reward: 25.01 ± 3.27
+⚠️ Cost:   3779.14 ± 28.57
+
+🎯 Task: crawl-0.4-0-d
+✅ Reward: 187.67 ± 39.78
+⚠️ Cost:   3655.26 ± 168.13
+
+🎯 Task: crawl-0.4-2-d
+✅ Reward: 8.52 ± 1.75
+⚠️ Cost:   3329.68 ± 50.74
+
+🎯 Task: crawl-0.5-0-d
+✅ Reward: 113.26 ± 20.46
+⚠️ Cost:   3766.02 ± 87.24
+
+🎯 Task: crawl-0.5-2-d
+✅ Reward: 29.00 ± 0.72
+⚠️ Cost:   3434.80 ± 39.86

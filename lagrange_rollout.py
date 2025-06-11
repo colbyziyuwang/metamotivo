@@ -1,20 +1,19 @@
 import os
-os.environ["OMP_NUM_THREADS"] = "1"
-
-import gymnasium
-import torch
 import numpy as np
+import torch
 import h5py
-import mediapy as media
-
+import gymnasium
 from huggingface_hub import hf_hub_download
+
+from humenv import STANDARD_TASKS, make_humenv
 from metamotivo.fb_cpr.huggingface import FBcprModel
 from metamotivo.wrappers.humenvbench import RewardWrapper
 from metamotivo.buffers.buffers import DictBuffer
-from humenv import STANDARD_TASKS, make_humenv
+from set_seed import set_seed
+
+os.environ["OMP_NUM_THREADS"] = "1"
 
 if __name__ == "__main__":
-    # Download dataset
     local_dir = "metamotivo-S-1-datasets"
     dataset = "buffer_inference_500000.hdf5"
     buffer_path = hf_hub_download(
@@ -23,19 +22,12 @@ if __name__ == "__main__":
         repo_type="model",
         local_dir=local_dir,
     )
-
-    # Load into DictBuffer
     hf = h5py.File(buffer_path, "r")
     data = {k: v[:] for k, v in hf.items()}
     buffer = DictBuffer(capacity=data["qpos"].shape[0], device="cpu")
     buffer.extend(data)
 
-    # Setup model and task
-    task = STANDARD_TASKS[25]
-    print("Task:", task)
-    device = "cpu"
-    model = FBcprModel.from_pretrained("facebook/metamotivo-S-1", device=device)
-
+    model = FBcprModel.from_pretrained("facebook/metamotivo-S-1", device="cpu")
     rew_model = RewardWrapper(
         model=model,
         inference_dataset=buffer,
@@ -43,98 +35,85 @@ if __name__ == "__main__":
         inference_function="reward_wr_inference",
         max_workers=40,
         process_executor=True,
-        process_context="forkserver",
+        process_context="forkserver"
     )
 
-    z = rew_model.reward_inference(task)
-
-    env, _ = make_humenv(
-        num_envs=1,
-        task=task,
-        state_init="DefaultAndFall",
-        wrappers=[gymnasium.wrappers.FlattenObservation]
-    )
-    observation, info = env.reset()
-    done = False
-    frames = [env.render()]
-
-    # Cost constraint setup
+    sample_range = (-1.0, 1.0)
     specific_dimensions = [-1]
-    sample_range = [-1.0, 1.0]
+    output_file = "lagrange_output.txt"
 
-    observation_c_z = observation.copy()
+    with open(output_file, "w") as f:
+        for task in STANDARD_TASKS:
+            print(f"\n🎯 Task: {task}")
+            f.write(f"\n🎯 Task: {task}\n")
+            z = rew_model.reward_inference(task)
 
-    # Generate new random values for the specific dimensions
-    for dim in specific_dimensions:
-        observation_c_z[dim] = np.random.uniform(sample_range[0], sample_range[1])
+            task_rewards = []
+            task_costs = []
 
-    # Convert to torch tensor
-    observation_c_z_tensor = torch.tensor(observation_c_z.reshape(1, -1), dtype=torch.float32)
+            for seed in range(5):
+                set_seed(seed)
+                env, _ = make_humenv(num_envs=1, task=task, state_init="DefaultAndFall", seed=seed,
+                                     wrappers=[gymnasium.wrappers.FlattenObservation])
+                observation, info = env.reset(seed=seed)
 
-    # Extract the modified values for those dimensions to compute reward_term
-    modified_values = observation_c_z_tensor[:, specific_dimensions]
-    reward_term = 10 * (modified_values - sample_range[0])
+                # Lagrange optimization
+                observation_c_z = observation.copy()
+                for dim in specific_dimensions:
+                    observation_c_z[dim] = np.random.uniform(sample_range[0], sample_range[1])
+                observation_c_z_tensor = torch.tensor(observation_c_z.reshape(1, -1), dtype=torch.float32)
+                modified_values = observation_c_z_tensor[:, specific_dimensions]
+                reward_term = 10 * (modified_values - sample_range[0])
+                c_z = model.reward_inference(observation_c_z_tensor, reward_term)
 
-    # Run reward inference to get c_z
-    c_z = model.reward_inference(observation_c_z_tensor, reward_term)
+                eta = -100
+                lagrange_min, lagrange_max = 0.0, 10.0
+                obs_torch = torch.tensor(observation.reshape(1, -1), dtype=torch.float32, device=z.device)
+                with torch.no_grad():
+                    while abs(lagrange_max - lagrange_min) > 1e-5:
+                        lagrange_multiplier = (lagrange_min + lagrange_max) / 2
+                        Z_lambda_c = z - lagrange_multiplier * c_z
+                        action = model.act(obs=obs_torch, z=Z_lambda_c).ravel()
+                        Z_lambda_c = Z_lambda_c.unsqueeze(0)
+                        action = action.unsqueeze(0).unsqueeze(0)
+                        Q = model.critic(obs_torch, Z_lambda_c, action).squeeze()
+                        if abs(Q.mean().item() - eta) < 1e-2:
+                            break
+                        elif Q.mean().item() > eta:
+                            lagrange_min = lagrange_multiplier
+                        else:
+                            lagrange_max = lagrange_multiplier
 
-    # Lagrange multiplier search
-    lagrange_Min, lagrange_Max = 0, 10
-    eta = -100
-    lagrange_min = lagrange_Min
-    lagrange_max = lagrange_Max
-    lagrange_multiplier = np.random.uniform(lagrange_min, lagrange_max)
+                # Final rollout
+                observation, _ = env.reset()
+                done = False
+                total_reward = 0.0
+                total_cost = 0.0
 
-    obs_torch = torch.as_tensor(observation, dtype=torch.float32, device=z.device).unsqueeze(0)
+                while not done:
+                    Z_lambda_c = z - lagrange_multiplier * c_z
+                    obs = torch.tensor(observation.reshape(1, -1), dtype=torch.float32, device=z.device)
+                    action = rew_model.act(obs, Z_lambda_c).ravel()
+                    observation, reward, terminated, truncated, info = env.step(action)
+                    total_reward += reward
+                    for dim in specific_dimensions:
+                        if observation[dim] > sample_range[0]:
+                            total_cost += 10 * (observation[dim] - sample_range[0])
+                    done = bool(terminated or truncated)
 
-    with torch.no_grad():
-        while abs(lagrange_max - lagrange_min) > 1e-5:
-            Z_lambda_c = z - lagrange_multiplier * c_z
-            action = model.act(obs=obs_torch, z=Z_lambda_c).ravel()  # shape: [action_dim]
-    
-            # Unsqueeze for critic
-            Z_lambda_c = Z_lambda_c.unsqueeze(0)                     # [1, z_dim]
-            action = action.unsqueeze(0).unsqueeze(0)                # [1, 1, action_dim]
+                task_rewards.append(total_reward)
+                task_costs.append(total_cost)
 
-            Q = model.critic(obs_torch, Z_lambda_c, action).squeeze()
+            reward_mean = np.mean(task_rewards)
+            reward_std = np.std(task_rewards)
+            cost_mean = np.mean(task_costs)
+            cost_std = np.std(task_costs)
 
-            if abs(Q.mean().item() - eta) < 1e-2:
-                break
-            elif Q.mean().item() > eta:
-                lagrange_min = lagrange_multiplier
-            else:
-                lagrange_max = lagrange_multiplier
+            result = (
+                f"✅ Reward: {reward_mean:.2f} ± {reward_std:.2f}\n"
+                f"⚠️ Cost:   {cost_mean:.2f} ± {cost_std:.2f}\n"
+            )
+            print(result)
+            f.write(result)
 
-            lagrange_multiplier = (lagrange_min + lagrange_max) / 2
-
-    # Final rollout
-    task_reward = 0.0
-    task_cost = 0.0
-    done = False
-    observation, _ = env.reset()
-    frames = [env.render()]
-
-    while not done:
-        Z_lambda_c = z - lagrange_multiplier * c_z
-        obs = torch.tensor(observation.reshape(1, -1), dtype=torch.float32, device=z.device)
-        action = rew_model.act(obs, Z_lambda_c).ravel()
-        observation, reward, terminated, truncated, info = env.step(action)
-
-        task_reward += reward
-        for dim in specific_dimensions:
-            if observation[dim] > sample_range[0]:
-                task_cost += 10 * (observation[dim] - sample_range[0])
-
-        frames.append(env.render())
-        done = bool(terminated or truncated)
-
-    # Save video
-    os.makedirs("videos", exist_ok=True)
-    video_path = f"videos/metamotivo_task_{task}_lagrange.mp4"
-    media.write_video(video_path, frames, fps=30)
-
-    # Print results
-    print(f"✅ Finished rollout for task: {task}")
-    print(f"🎯 Total reward: {task_reward}")
-    print(f"⚠️ Total cost: {task_cost}")
-    print(f"📹 Video saved at: {video_path}")
+    print(f"\n📄 All results saved to {output_file}")
