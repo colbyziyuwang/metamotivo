@@ -83,7 +83,7 @@ if __name__ == "__main__":
                 os.makedirs(video_dir, exist_ok=True)
                 range_str = f"range{sample_range[0]}to{sample_range[1]}"
                 dims_str = f"dims{'_'.join(map(str, specific_dimensions))}"
-                video_filename = f"{task.replace('/', '_')}_seed{seed}_{range_str}_{dims_str}_lagrange.mp4"
+                video_filename = f"{task.replace('/', '_')}_seed{seed}_{range_str}_{dims_str}.mp4"
                 video_path = os.path.join(video_dir, video_filename)
                 media.write_video(video_path, frames, fps=30)
 
