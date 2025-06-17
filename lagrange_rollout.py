@@ -107,6 +107,15 @@ if __name__ == "__main__":
                 task_rewards.append(total_reward)
                 task_costs.append(total_cost)
 
+                # save video
+                video_dir = "videos"
+                os.makedirs(video_dir, exist_ok=True)
+                range_str = f"range{sample_range[0]}to{sample_range[1]}"
+                dims_str = f"dims{'_'.join(map(str, specific_dimensions))}"
+                video_filename = f"{task.replace('/', '_')}_seed{seed}_{range_str}_{dims_str}_lagrange.mp4"
+                video_path = os.path.join(video_dir, video_filename)
+                media.write_video(video_path, frames, fps=30)
+
             reward_mean = np.mean(task_rewards)
             reward_std = np.std(task_rewards)
             cost_mean = np.mean(task_costs)
@@ -118,15 +127,6 @@ if __name__ == "__main__":
             )
             print(result)
             f.write(result)
-
-            # save video
-            video_dir = "videos"
-            os.makedirs(video_dir, exist_ok=True)
-            range_str = f"range{sample_range[0]}to{sample_range[1]}"
-            dims_str = f"dims{'_'.join(map(str, specific_dimensions))}"
-            video_filename = f"{task.replace('/', '_')}_seed{seed}_{range_str}_{dims_str}_lagrange.mp4"
-            video_path = os.path.join(video_dir, video_filename)
-            media.write_video(video_path, frames, fps=30)
 
 
     print(f"\n📄 All results saved to {output_file}")
