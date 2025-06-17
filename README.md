@@ -1,6 +1,62 @@
 # Meta Motivo
 **[Meta, FAIR](https://ai.facebook.com/research/)**
 
+## Experiment Setup Notes
+
+1. **Install Dependencies**
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. **Run Experiments**
+
+   * **Constrained (Lagrange) Rollout**
+
+     ```bash
+     python lagrange_rollout.py
+     ```
+
+   * **Unconstrained Rollout**
+
+     ```bash
+     python unconstrained_rollout.py
+     ```
+
+   By default, each script runs every task in `STANDARD_TASKS` five times (`seed` 0‑4). Results are written to:
+
+   | Script                     | Output File                | Description                             |
+   | -------------------------- | -------------------------- | --------------------------------------- |
+   | `lagrange_rollout.py`      | `lagrange_output.txt`      | Reward & cost for constrained rollout   |
+   | `unconstrained_rollout.py` | `unconstrained_output.txt` | Reward & cost for unconstrained rollout |
+
+3. **Adjusting Experiment Scope**
+
+   * **Fewer Seeds** – edit **line 55** in either script:
+
+     ```python
+     for seed in range(5):    # change 5 → desired number
+     ```
+
+   * **Specific Tasks** – edit **line 47** in either script:
+
+     ```python
+     for task in STANDARD_TASKS:  # replace with custom task list
+     ```
+
+4. **Video Recording**
+
+   Both scripts save rollout videos to the `videos/` directory.
+
+5. **Observation Specification**
+
+   * The **humanoid** agent has **24 bodies**. Detailed observation specs are in `obs_spec`.
+
+6. **Auxiliary Files**
+
+   * `metamotivo_observation_stats.txt` – statistics from the **unconstrained** rollout.
+
+---
 
 # Overview
 This repository provides a PyTorch implementation and pre-trained models for Meta Motivo. For details see the paper [Zero-Shot Whole-Body Humanoid Control via Behavioral Foundation Models](https://metamotivo.metademolab.com/).
