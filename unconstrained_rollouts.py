@@ -9,8 +9,8 @@ from humenv import STANDARD_TASKS, make_humenv
 from metamotivo.fb_cpr.huggingface import FBcprModel
 from metamotivo.wrappers.humenvbench import RewardWrapper
 from metamotivo.buffers.buffers import DictBuffer
-
 from set_seed import set_seed
+import mediapy as media
 
 os.environ["OMP_NUM_THREADS"] = "1"
 
@@ -62,10 +62,12 @@ if __name__ == "__main__":
                 total_reward = 0.0
                 task_cost = 0.0
 
+                frames = [env.render()]
                 while not done:
                     obs_tensor = torch.tensor(observation.reshape(1, -1), dtype=torch.float32, device=rew_model.device)
                     action = rew_model.act(obs=obs_tensor, z=z, mean=True).ravel()
                     observation, reward, terminated, truncated, info = env.step(action)
+                    frames.append(env.render())
                     done = bool(terminated or truncated)
                     total_reward += reward
 
@@ -87,5 +89,14 @@ if __name__ == "__main__":
             )
             print(result)
             f.write(result)
+
+            # save videos
+            video_dir = "videos"
+            os.makedirs(video_dir, exist_ok=True)
+            range_str = f"range{sample_range[0]}to{sample_range[1]}"
+            dims_str = f"dims{'_'.join(map(str, specific_dimensions))}"
+            video_filename = f"{task.replace('/', '_')}_seed{seed}_{range_str}_{dims_str}.mp4"
+            video_path = os.path.join(video_dir, video_filename)
+            media.write_video(video_path, frames, fps=30)
 
     print(f"\n📄 All results saved to {output_file}")
