@@ -46,6 +46,6 @@ names = list(dict.fromkeys(names))
 print(names)
 
 # Store list into a file
-with open("joint_names.txt", "w") as f:
+with open("body_names.txt", "w") as f:
     for name in names:
         f.write(name + "\n")
