@@ -86,7 +86,7 @@ if __name__ == "__main__":
     # expect 358
     assert OBS_DIM == 358, OBS_DIM
 
-    # root rot slice should be 70-76
+    # root rot slice should be 70-75
     print("Root rotation slice:", slice_for("Pelv", "rot"))
     # L_Hip position slice should start at OFF_POS (1) because it's the first link
     print("L_Hip pos slice:", slice_for("L_Hip", "pos"))
