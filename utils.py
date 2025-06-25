@@ -77,7 +77,7 @@ def slice_for(body: str | int, kind: str) -> slice:
 
     if kind == "ang":
         start = OFF_ANG + b_id * ANG_PER_B
-        return slice(start, start + ANG_PER_B - 1)
+        return start, start + ANG_PER_B - 1
 
     raise ValueError("kind must be one of 'pos', 'rot', 'vel', 'ang'")
 
