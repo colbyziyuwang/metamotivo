@@ -3,7 +3,7 @@ import numpy as np
 import torch
 import h5py
 from huggingface_hub import hf_hub_download
-from gymnasium.wrappers import FlattenObservation
+import gymnasium
 
 from humenv import STANDARD_TASKS, make_humenv
 from metamotivo.fb_cpr.huggingface import FBcprModel
@@ -59,14 +59,8 @@ if __name__ == "__main__":
 
             for seed in range(1):
                 set_seed(seed)
-                env, _ = make_humenv(
-                    num_envs=1,
-                    wrappers=[
-                        FlattenObservation,
-                    ],
-                    state_init="Default",
-                    seed=seed,
-                )
+                env, _ = make_humenv(num_envs=1, task=task, state_init="Default", seed=seed,
+                                     wrappers=[gymnasium.wrappers.FlattenObservation])
                 observation, info = env.reset(seed=seed)
 
                 # Lagrange optimization
@@ -76,6 +70,7 @@ if __name__ == "__main__":
                 observation_c_z_tensor = torch.tensor(observation_c_z.reshape(1, -1), dtype=torch.float32)
                 modified_values = observation_c_z_tensor[:, specific_dimensions]
                 reward_term = 10 * (modified_values - sample_range[0])
+                reward_term = torch.sum(reward_term, dim=1, keepdim=True)
                 c_z = model.reward_inference(observation_c_z_tensor, reward_term)
 
                 eta = -300
@@ -89,7 +84,6 @@ if __name__ == "__main__":
                         Z_lambda_c = Z_lambda_c.unsqueeze(0)
                         action = action.unsqueeze(0).unsqueeze(0)
                         Q = model.critic(obs_torch, Z_lambda_c, action).squeeze()
-                        print(Q)
                         if abs(Q.mean().item() - eta) < 1e-2:
                             break
                         elif Q.mean().item() > eta:

@@ -9,7 +9,7 @@ from humenv import STANDARD_TASKS, make_humenv
 from metamotivo.fb_cpr.huggingface import FBcprModel
 from metamotivo.wrappers.humenvbench import RewardWrapper
 from metamotivo.buffers.buffers import DictBuffer
-from set_seed import set_seed
+from utils import set_seed, suggest_constraint_range
 import mediapy as media
 
 os.environ["OMP_NUM_THREADS"] = "1"
@@ -39,8 +39,6 @@ if __name__ == "__main__":
         process_context="forkserver"
     )
 
-    sample_range = (-1.0, 1.0)
-    specific_dimensions = [-1]
     output_file = "unconstrained_output.txt"
 
     with open(output_file, "w") as f:
@@ -49,12 +47,19 @@ if __name__ == "__main__":
             f.write(f"\n🎯 Task: {task}\n")
             z = rew_model.reward_inference(task)
 
+            # get sample range and specific dimensions
+            body_part = "L_Hip" # Check body_names.txt for all body parts
+            kind = "pos" # "pos", "rot", "vel" or "ang"
+            dim_idx_set, lo, hi = suggest_constraint_range(task=task, body=body_part, kind=kind)
+            specific_dimensions = list(dim_idx_set)
+            sample_range = (lo, hi)
+
             task_rewards = []
             task_costs = []
 
-            for seed in range(5):
+            for seed in range(0):
                 set_seed(seed)
-                env, _ = make_humenv(num_envs=1, task=task, state_init="DefaultAndFall", seed=seed,
+                env, _ = make_humenv(num_envs=1, task=task, state_init="Default", seed=seed,
                                      wrappers=[gymnasium.wrappers.FlattenObservation])
                 observation, info = env.reset(seed=seed)
                 done = False
@@ -81,9 +86,9 @@ if __name__ == "__main__":
                 # save video
                 video_dir = "videos"
                 os.makedirs(video_dir, exist_ok=True)
-                range_str = f"range{sample_range[0]}to{sample_range[1]}"
+                range_str = f"{lo:.3f}_{hi:.3f}".replace('.', 'p')
                 dims_str = f"dims{'_'.join(map(str, specific_dimensions))}"
-                video_filename = f"{task.replace('/', '_')}_seed{seed}_{range_str}_{dims_str}.mp4"
+                video_filename = f"{task.replace('/', '_')}_seed{seed}_{range_str}_{dims_str}_{body_part}_{kind}_unconstrained.mp4"
                 video_path = os.path.join(video_dir, video_filename)
                 media.write_video(video_path, frames, fps=30)
 
