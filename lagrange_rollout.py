@@ -2,14 +2,14 @@ import os
 import numpy as np
 import torch
 import h5py
-import gymnasium
 from huggingface_hub import hf_hub_download
+from gymnasium.wrappers import FlattenObservation
 
 from humenv import STANDARD_TASKS, make_humenv
 from metamotivo.fb_cpr.huggingface import FBcprModel
 from metamotivo.wrappers.humenvbench import RewardWrapper
 from metamotivo.buffers.buffers import DictBuffer
-from set_seed import set_seed
+from utils import set_seed, suggest_constraint_range
 import mediapy as media
 
 os.environ["OMP_NUM_THREADS"] = "1"
@@ -39,8 +39,6 @@ if __name__ == "__main__":
         process_context="forkserver"
     )
 
-    sample_range = (-1.0, 1.0)
-    specific_dimensions = [-1]
     output_file = "lagrange_output.txt"
 
     with open(output_file, "w") as f:
@@ -49,13 +47,26 @@ if __name__ == "__main__":
             f.write(f"\n🎯 Task: {task}\n")
             z = rew_model.reward_inference(task)
 
+            # get sample range and specific dimensions
+            body_part = "L_Hip" # Check body_names.txt for all body parts
+            kind = "pos" # "pos", "rot", "vel" or "ang"
+            dim_idx_set, lo, hi = suggest_constraint_range(task=task, body=body_part, kind=kind)
+            specific_dimensions = list(dim_idx_set)
+            sample_range = (lo, hi)
+
             task_rewards = []
             task_costs = []
 
-            for seed in range(5):
+            for seed in range(1):
                 set_seed(seed)
-                env, _ = make_humenv(num_envs=1, task=task, state_init="DefaultAndFall", seed=seed,
-                                     wrappers=[gymnasium.wrappers.FlattenObservation])
+                env, _ = make_humenv(
+                    num_envs=1,
+                    wrappers=[
+                        FlattenObservation,
+                    ],
+                    state_init="Default",
+                    seed=seed,
+                )
                 observation, info = env.reset(seed=seed)
 
                 # Lagrange optimization
@@ -67,7 +78,7 @@ if __name__ == "__main__":
                 reward_term = 10 * (modified_values - sample_range[0])
                 c_z = model.reward_inference(observation_c_z_tensor, reward_term)
 
-                eta = -100
+                eta = -300
                 lagrange_min, lagrange_max = 0.0, 10.0
                 obs_torch = torch.tensor(observation.reshape(1, -1), dtype=torch.float32, device=z.device)
                 with torch.no_grad():
@@ -78,6 +89,7 @@ if __name__ == "__main__":
                         Z_lambda_c = Z_lambda_c.unsqueeze(0)
                         action = action.unsqueeze(0).unsqueeze(0)
                         Q = model.critic(obs_torch, Z_lambda_c, action).squeeze()
+                        print(Q)
                         if abs(Q.mean().item() - eta) < 1e-2:
                             break
                         elif Q.mean().item() > eta:
@@ -110,9 +122,9 @@ if __name__ == "__main__":
                 # save video
                 video_dir = "videos"
                 os.makedirs(video_dir, exist_ok=True)
-                range_str = f"range{sample_range[0]}to{sample_range[1]}"
+                range_str = f"{lo:.3f}_{hi:.3f}".replace('.', 'p')
                 dims_str = f"dims{'_'.join(map(str, specific_dimensions))}"
-                video_filename = f"{task.replace('/', '_')}_seed{seed}_{range_str}_{dims_str}_lagrange.mp4"
+                video_filename = f"{task.replace('/', '_')}_seed{seed}_{range_str}_{dims_str}_eta_{eta}_{body_part}_{kind}_lagrange.mp4"
                 video_path = os.path.join(video_dir, video_filename)
                 media.write_video(video_path, frames, fps=30)
 
@@ -127,6 +139,5 @@ if __name__ == "__main__":
             )
             print(result)
             f.write(result)
-
 
     print(f"\n📄 All results saved to {output_file}")
