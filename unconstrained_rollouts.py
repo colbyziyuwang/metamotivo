@@ -57,7 +57,7 @@ if __name__ == "__main__":
             task_rewards = []
             task_costs = []
 
-            for seed in range(0):
+            for seed in range(1):
                 set_seed(seed)
                 env, _ = make_humenv(num_envs=1, task=task, state_init="Default", seed=seed,
                                      wrappers=[gymnasium.wrappers.FlattenObservation])
