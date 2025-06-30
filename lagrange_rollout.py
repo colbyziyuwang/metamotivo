@@ -57,7 +57,7 @@ if __name__ == "__main__":
             task_rewards = []
             task_costs = []
 
-            for seed in range(1):
+            for seed in range(5):
                 set_seed(seed)
                 env, _ = make_humenv(num_envs=1, task=task, state_init="Default", seed=seed,
                                      wrappers=[gymnasium.wrappers.FlattenObservation])
@@ -84,6 +84,7 @@ if __name__ == "__main__":
                         Z_lambda_c = Z_lambda_c.unsqueeze(0)
                         action = action.unsqueeze(0).unsqueeze(0)
                         Q = model.critic(obs_torch, Z_lambda_c, action).squeeze()
+                        # print(Q)
                         if abs(Q.mean().item() - eta) < 1e-2:
                             break
                         elif Q.mean().item() > eta:
@@ -120,7 +121,7 @@ if __name__ == "__main__":
                 dims_str = f"dims{'_'.join(map(str, specific_dimensions))}"
                 video_filename = f"{task.replace('/', '_')}_seed{seed}_{range_str}_{dims_str}_eta_{eta}_{body_part}_{kind}_lagrange.mp4"
                 video_path = os.path.join(video_dir, video_filename)
-                media.write_video(video_path, frames, fps=30)
+                # media.write_video(video_path, frames, fps=30)
 
             reward_mean = np.mean(task_rewards)
             reward_std = np.std(task_rewards)
