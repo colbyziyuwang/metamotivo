@@ -39,7 +39,9 @@ if __name__ == "__main__":
         process_context="forkserver"
     )
 
-    output_file = "unconstrained_output.txt"
+    body_part = "L_Hip" # Check body_names.txt for all body parts
+    kind = "vel" # "pos", "rot", "vel" or "ang"
+    output_file = "unconstrained_output_{body_part}_{kind}.txt"
 
     with open(output_file, "w") as f:
         for task in STANDARD_TASKS:
@@ -48,8 +50,6 @@ if __name__ == "__main__":
             z = rew_model.reward_inference(task)
 
             # get sample range and specific dimensions
-            body_part = "L_Hip" # Check body_names.txt for all body parts
-            kind = "pos" # "pos", "rot", "vel" or "ang"
             dim_idx_set, lo, hi = suggest_constraint_range(task=task, body=body_part, kind=kind)
             specific_dimensions = list(dim_idx_set)
             sample_range = (lo, hi)

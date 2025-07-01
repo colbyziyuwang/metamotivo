@@ -39,7 +39,9 @@ if __name__ == "__main__":
         process_context="forkserver"
     )
 
-    output_file = "lagrange_output.txt"
+    body_part = "L_Hip" # Check body_names.txt for all body parts
+    kind = "vel" # "pos", "rot", "vel" or "ang"
+    output_file = "largrange_output_{body_part}_{kind}.txt"
 
     with open(output_file, "w") as f:
         for task in STANDARD_TASKS:
@@ -48,8 +50,6 @@ if __name__ == "__main__":
             z = rew_model.reward_inference(task)
 
             # get sample range and specific dimensions
-            body_part = "L_Hip" # Check body_names.txt for all body parts
-            kind = "pos" # "pos", "rot", "vel" or "ang"
             dim_idx_set, lo, hi = suggest_constraint_range(task=task, body=body_part, kind=kind)
             specific_dimensions = list(dim_idx_set)
             sample_range = (lo, hi)
@@ -74,23 +74,46 @@ if __name__ == "__main__":
                 c_z = model.reward_inference(observation_c_z_tensor, reward_term)
 
                 eta = -300
-                lagrange_min, lagrange_max = 0.0, 10.0
+                lr = 0.0001 
                 obs_torch = torch.tensor(observation.reshape(1, -1), dtype=torch.float32, device=z.device)
-                with torch.no_grad():
-                    while abs(lagrange_max - lagrange_min) > 1e-5:
-                        lagrange_multiplier = (lagrange_min + lagrange_max) / 2
-                        Z_lambda_c = z - lagrange_multiplier * c_z
-                        action = model.act(obs=obs_torch, z=Z_lambda_c).ravel()
-                        Z_lambda_c = Z_lambda_c.unsqueeze(0)
-                        action = action.unsqueeze(0).unsqueeze(0)
-                        Q = model.critic(obs_torch, Z_lambda_c, action).squeeze()
-                        # print(Q)
-                        if abs(Q.mean().item() - eta) < 1e-2:
-                            break
-                        elif Q.mean().item() > eta:
-                            lagrange_min = lagrange_multiplier
-                        else:
-                            lagrange_max = lagrange_multiplier
+                
+                # 1) make a learnable lambda_t
+                lambda_t = torch.tensor(0.5, dtype=torch.float32, device=z.device,
+                                        requires_grad=True)
+
+                # 2) turn OFF the global no_grad for the critic call
+                model.eval()                 # keep eval mode (no dropout, etc.)
+
+                critic_net = model._critic    # raw nn.Module (not wrapped)
+
+                for step in range(100):
+                    if lambda_t.grad is not None:
+                        lambda_t.grad.zero_()
+
+                    # --- build Z_{λ,c} ---
+                    Z_lambda_c = z - lambda_t * c_z          # this depends on λ
+
+                    # action can still come from the helper (we don't need its grad)
+                    with torch.no_grad():
+                        a = model.act(obs=obs_torch, z=Z_lambda_c).ravel()
+
+                    # 3) call the *raw* critic so autograd can see λ
+                    Q = critic_net(
+                            obs_torch,
+                            Z_lambda_c.unsqueeze(0),
+                            a.unsqueeze(0).unsqueeze(0)
+                        ).squeeze()
+
+                    loss = 0.5 * (Q.mean() - eta).pow(2)    # scalar
+
+                    # 4) backward through λ
+                    loss.backward()                          # fills lambda_t.grad
+
+                    # 5) manual SGD on λ (parameters stay frozen)
+                    with torch.no_grad():
+                        lambda_t -= lr * lambda_t.grad
+
+                    print(f"step {step:3d} | λ = {lambda_t.item():.4f} | Q = {Q[0].item():.4f} | loss = {loss.item():.4f}")
 
                 # Final rollout
                 observation, _ = env.reset()
@@ -100,7 +123,7 @@ if __name__ == "__main__":
 
                 frames = [env.render()]
                 while not done:
-                    Z_lambda_c = z - lagrange_multiplier * c_z
+                    Z_lambda_c = z - lambda_t.item() * c_z
                     obs = torch.tensor(observation.reshape(1, -1), dtype=torch.float32, device=z.device)
                     action = rew_model.act(obs, Z_lambda_c).ravel()
                     observation, reward, terminated, truncated, info = env.step(action)

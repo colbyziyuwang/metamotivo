@@ -1,0 +1,10 @@
+
+🎯 Task: move-ego-0-0
+✅ Reward: 276.99 ± 0.00
+⚠️ Cost:   2581.50 ± 0.00
+
+🎯 Task: move-ego-low-0-0
+✅ Reward: 263.00 ± 0.00
+⚠️ Cost:   3458.18 ± 0.00
+
+🎯 Task: headstand
