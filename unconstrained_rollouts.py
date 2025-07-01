@@ -41,7 +41,7 @@ if __name__ == "__main__":
 
     body_part = "L_Hip" # Check body_names.txt for all body parts
     kind = "vel" # "pos", "rot", "vel" or "ang"
-    output_file = "unconstrained_output_{body_part}_{kind}.txt"
+    output_file = f"unconstrained_output_{body_part}_{kind}.txt"
 
     with open(output_file, "w") as f:
         for task in STANDARD_TASKS:

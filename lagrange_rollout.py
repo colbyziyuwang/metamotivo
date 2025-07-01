@@ -41,7 +41,7 @@ if __name__ == "__main__":
 
     body_part = "L_Hip" # Check body_names.txt for all body parts
     kind = "vel" # "pos", "rot", "vel" or "ang"
-    output_file = "largrange_output_{body_part}_{kind}.txt"
+    output_file = f"lagrange_output_{body_part}_{kind}.txt"
 
     with open(output_file, "w") as f:
         for task in STANDARD_TASKS:
@@ -113,7 +113,7 @@ if __name__ == "__main__":
                     with torch.no_grad():
                         lambda_t -= lr * lambda_t.grad
 
-                    print(f"step {step:3d} | λ = {lambda_t.item():.4f} | Q = {Q[0].item():.4f} | loss = {loss.item():.4f}")
+                    # print(f"step {step:3d} | λ = {lambda_t.item():.4f} | Q = {Q[0].item():.4f} | loss = {loss.item():.4f}")
 
                 # Final rollout
                 observation, _ = env.reset()
@@ -144,7 +144,8 @@ if __name__ == "__main__":
                 dims_str = f"dims{'_'.join(map(str, specific_dimensions))}"
                 video_filename = f"{task.replace('/', '_')}_seed{seed}_{range_str}_{dims_str}_eta_{eta}_{body_part}_{kind}_lagrange.mp4"
                 video_path = os.path.join(video_dir, video_filename)
-                # media.write_video(video_path, frames, fps=30)
+                if (seed == 0):
+                    media.write_video(video_path, frames, fps=30)
 
             reward_mean = np.mean(task_rewards)
             reward_std = np.std(task_rewards)
