@@ -14,6 +14,8 @@ import mediapy as media
 
 os.environ["OMP_NUM_THREADS"] = "1"
 
+METHOD = "baseline" # gradient_descent, baseline, bisection
+
 if __name__ == "__main__":
     local_dir = "metamotivo-S-1-datasets"
     dataset = "buffer_inference_500000.hdf5"
@@ -41,7 +43,7 @@ if __name__ == "__main__":
 
     body_part = "L_Hip" # Check body_names.txt for all body parts
     kind = "vel" # "pos", "rot", "vel" or "ang"
-    output_file = f"lagrange_output_{body_part}_{kind}.txt"
+    output_file = f"lagrange_output_{body_part}_{kind} ({METHOD}).txt"
 
     with open(output_file, "w") as f:
         for task in STANDARD_TASKS:
@@ -56,6 +58,7 @@ if __name__ == "__main__":
 
             task_rewards = []
             task_costs = []
+            q_c_values = []
 
             for seed in range(5):
                 set_seed(seed)
@@ -77,9 +80,23 @@ if __name__ == "__main__":
                 lr = 0.0001 
                 obs_torch = torch.tensor(observation.reshape(1, -1), dtype=torch.float32, device=z.device)
                 
-                # 1) make a learnable lambda_t
-                lambda_t = torch.tensor(0.5, dtype=torch.float32, device=z.device,
-                                        requires_grad=True)
+                # Define lagrange_min, and lagrange_max for bisection method
+                lambda_min_t, lambda_max_t = 0.0, 1.0
+                lambda_t = (lambda_min_t + lambda_max_t) / 2.0
+                
+                # Define threshold and step size for bisection and baseline methods
+                threshold = 0.01
+                step_size = 0.1
+
+                # 1) make a learnable lambda_t (if method is gradient_descent)
+                requires_grad = (METHOD == "gradient_descent")
+                lambda_t = torch.tensor(lambda_t, dtype=torch.float32, device=z.device,
+                                        requires_grad=requires_grad)
+                                    
+                lambda_min_t = torch.tensor(lambda_min_t, dtype=torch.float32, device=z.device,
+                                        requires_grad=False)
+                lambda_max_t = torch.tensor(lambda_max_t, dtype=torch.float32, device=z.device,
+                                        requires_grad=False)
 
                 # 2) turn OFF the global no_grad for the critic call
                 model.eval()                 # keep eval mode (no dropout, etc.)
@@ -87,7 +104,7 @@ if __name__ == "__main__":
                 critic_net = model._critic    # raw nn.Module (not wrapped)
 
                 for step in range(100):
-                    if lambda_t.grad is not None:
+                    if lambda_t.grad is not None and METHOD == "gradient_descent":
                         lambda_t.grad.zero_()
 
                     # --- build Z_{λ,c} ---
@@ -104,22 +121,39 @@ if __name__ == "__main__":
                             a.unsqueeze(0).unsqueeze(0)
                         ).squeeze()
 
-                    loss = 0.5 * (Q.mean() - eta).pow(2)    # scalar
+                    if (METHOD == "gradient_descent"):
+                        loss = 0.5 * (Q.mean() - eta).pow(2)    # scalar
 
-                    # 4) backward through λ
-                    loss.backward()                          # fills lambda_t.grad
+                        # 4) backward through λ
+                        loss.backward()                          # fills lambda_t.grad
 
-                    # 5) manual SGD on λ (parameters stay frozen)
-                    with torch.no_grad():
-                        lambda_t -= lr * lambda_t.grad
+                        # 5) manual SGD on λ (parameters stay frozen)
+                        with torch.no_grad():
+                            lambda_t -= lr * lambda_t.grad
 
-                    # print(f"step {step:3d} | λ = {lambda_t.item():.4f} | Q = {Q[0].item():.4f} | loss = {loss.item():.4f}")
+                        # print(f"step {step:3d} | λ = {lambda_t.item():.4f} | Q = {Q[0].item():.4f} | loss = {loss.item():.4f}")
+                    elif (METHOD == "bisection"):
+                        if (abs(Q.mean() - eta) < threshold):
+                            break
+                        elif (Q.mean() < eta):
+                            lambda_max_t = lambda_t
+                        elif (Q.mean() > eta):
+                            lambda_min_t = lambda_t
+                    else: # baseline
+                        if (abs(Q.mean() - eta) < threshold):
+                            break
+                        elif (Q.mean() < eta):
+                            lambda_t -= step_size
+                        elif (Q.mean() > eta):
+                            lambda_t += step_size
 
                 # Final rollout
                 observation, _ = env.reset()
                 done = False
                 total_reward = 0.0
                 total_cost = 0.0
+                q_c = 0.0
+                n_steps = 0
 
                 frames = [env.render()]
                 while not done:
@@ -134,8 +168,15 @@ if __name__ == "__main__":
                     frames.append(env.render())
                     done = bool(terminated or truncated)
 
+                    # store Q_c for first time
+                    if n_steps == 0:
+                        action = torch.tensor(action, dtype=torch.float32, device=z.device)
+                        q_c = rew_model.critic(obs, Z_lambda_c.unsqueeze(0), action.unsqueeze(0).unsqueeze(0)).squeeze().mean().item()
+                    n_steps += 1
+
                 task_rewards.append(total_reward)
                 task_costs.append(total_cost)
+                q_c_values.append(q_c)
 
                 # save video
                 video_dir = "videos"
@@ -151,10 +192,13 @@ if __name__ == "__main__":
             reward_std = np.std(task_rewards)
             cost_mean = np.mean(task_costs)
             cost_std = np.std(task_costs)
+            q_c_mean = np.mean(q_c_values)
+            q_c_std = np.std(q_c_values)
 
             result = (
                 f"✅ Reward: {reward_mean:.2f} ± {reward_std:.2f}\n"
                 f"⚠️ Cost:   {cost_mean:.2f} ± {cost_std:.2f}\n"
+                f"💰 Q_c:    {q_c_mean:.2f} ± {q_c_std:.2f}\n"
             )
             print(result)
             f.write(result)
