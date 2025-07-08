@@ -1,80 +1,101 @@
 # log2latex.py
-import re
-from collections import OrderedDict
+import re, argparse
 from pathlib import Path
-from typing import Dict, Tuple, List
+from collections import OrderedDict, defaultdict
 
-# --------------------------------------------
-# regex helpers
-_TASK_RE   = re.compile(r"🎯\s*Task:\s*(.+)")
-_LINE_RE   = re.compile(r"([^\s:]+):\s*([-\d.]+)\s*±\s*([-\d.]+)")
+# Example usage
+"""
+python log2latex.py \
+>    "lagrange_output_L_Hip_vel (gradient descent).txt" \
+>    "lagrange_output_L_Hip_vel (baseline).txt" \
+>    --labels "GradDesc" "Baseline" > combined_table.tex
+"""
 
-def _parse_block(block: List[str]) -> Tuple[str, Dict[str, str]]:
+# -------- regex --------------
+TASK_RE  = re.compile(r"🎯\s*Task:\s*(.+)")
+LINE_RE  = re.compile(r"([A-Za-z_]+):\s*([-\d.]+)\s*±\s*([-\d.]+)")
+LABEL_MAP = {"Reward": "Reward", "Cost": "Cost", "Q_c": "$Q_c$"}
+
+def parse_file(path: Path) -> OrderedDict:
     """
-    block -> ("move-ego-0-0", {"Reward": "257.58 ± 8.77", "Cost": "2678.11 ± 72.97", ...})
+    Returns OrderedDict{task -> {metric -> 'mean ± std'}}
     """
-    task_match = _TASK_RE.match(block[0])
-    if not task_match:
-        return None, None
-    task_name = task_match.group(1).strip()
-
-    stats = OrderedDict()          # Reward / Cost / (optional) Q_c
-    for ln in block[1:]:
-        m = _LINE_RE.search(ln)
-        if m:
-            label, mean, std = m.groups()
-            stats[label] = f"{mean} $\\pm$ {std}"
-    return task_name, stats
-
-def read_log(path: str | Path) -> Dict[str, Dict[str, str]]:
-    """
-    Returns OrderedDict  task_name -> {Reward: ".. ± ..", Cost: ".. ± ..", (Q_c: ".. ± ..")}
-    """
-    text = Path(path).read_text(encoding="utf-8").splitlines()
-
-    blocks, current = [], []
-    for ln in text:
-        if ln.strip() == "":                 # blank → block boundary
-            if current:
-                blocks.append(current)
-                current = []
+    rows = OrderedDict()
+    block = []
+    for line in path.read_text(encoding="utf-8").splitlines() + [""]:
+        if line.strip() == "":
+            if block:
+                task_m, data = _parse_block(block)
+                if task_m:
+                    rows[task_m] = data
+            block = []
         else:
-            current.append(ln)
-    if current:                              # trailing block
-        blocks.append(current)
+            block.append(line)
+    return rows
 
-    table = OrderedDict()
-    for blk in blocks:
-        task, stats = _parse_block(blk)
-        if task is None or stats is None:
-            continue
-        table[task] = stats
-    return table
+def _parse_block(lines):
+    m = TASK_RE.match(lines[0])
+    if not m:
+        return None, None
+    task = m.group(1).strip()
+    stats = {}
+    for ln in lines[1:]:
+        mm = LINE_RE.search(ln)
+        if mm:
+            key, mean, std = mm.groups()
+            stats[key] = f"{mean} $\\pm$ {std}"
+    return task, stats
 
-def make_latex(table: Dict[str, Dict[str, str]]) -> str:
-    # decide columns   (Reward, Cost, maybe Q_c)
-    header_labels = list(next(iter(table.values())).keys())   # look at first task
-    col_spec = "l" + "c" * len(header_labels)
 
-    lines = [
-        f"\\begin{{tabular}}{{|{col_spec}|}}",
-        "\\hline",
-        "Task & " + " & ".join(header_labels) + r" \\",
-        "\\hline"
-    ]
-    for task, stats in table.items():
-        row = [task] + [stats[k] for k in header_labels]
-        lines.append(" & ".join(row) + r" \\")
-    lines += ["\\hline", "\\end{tabular}"]
-    return "\n".join(lines)
+def merge_tables(files, labels):
+    """
+    -> mapping  task -> {label -> {metric -> text}}
+    """
+    big = defaultdict(lambda: defaultdict(dict))
+    for f, lab in zip(files, labels):
+        parsed = parse_file(Path(f))
+        for task, metrics in parsed.items():
+            for mlabel, val in metrics.items():
+                big[task][lab][LABEL_MAP[mlabel]] = val
+    return big
 
-# ------------------- quick CLI -------------------
+
+def to_latex(big, labels):
+    metrics = ["Reward", "Cost"]
+    has_qc = any("$Q_c$" in d for task in big.values()
+                                 for d in task.values())
+    if has_qc:
+        metrics.append("$Q_c$")
+
+    header_cols = [f"{lab} {m}" for lab in labels for m in metrics]
+    col_spec = "l" + "c" * len(header_cols)
+
+    out  = [f"\\begin{{tabular}}{{|{col_spec}|}}",
+            "\\hline",
+            "Task & " + " & ".join(header_cols) + r" \\",
+            "\\hline"]
+    for task in big:
+        cells = [task]
+        for lab in labels:
+            for m in metrics:
+                cells.append(big[task][lab].get(m, "--"))
+        out.append(" & ".join(cells) + r" \\")
+    out += ["\\hline", "\\end{tabular}"]
+    return "\n".join(out)
+
+
+# ---------------- CLI -----------------
 if __name__ == "__main__":
-    import argparse, sys
-    pa = argparse.ArgumentParser(description="Convert Metamotivo log to LaTeX table.")
-    pa.add_argument("logfile", help="path to *.txt produced by your rollout script")
-    args = pa.parse_args()
+    ap = argparse.ArgumentParser()
+    ap.add_argument("logs", nargs="+", help="log files to merge (≥2)")
+    ap.add_argument("--labels", nargs="+",
+                    help="column-group labels (defaults = stem of file names)")
+    args = ap.parse_args()
 
-    tbl  = read_log(args.logfile)
-    code = make_latex(tbl)
-    print(code)
+    labs = args.labels or [Path(f).stem for f in args.logs]
+    if len(labs) != len(args.logs):
+        ap.error("--labels must match number of log files")
+
+    tbl = merge_tables(args.logs, labs)
+    latex = to_latex(tbl, labs)
+    print(latex)
