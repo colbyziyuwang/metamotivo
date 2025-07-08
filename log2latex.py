@@ -6,7 +6,7 @@ from collections import OrderedDict, defaultdict
 # Example usage
 """
 python log2latex.py \
-"lagrange_output_L_Hip_vel (gradient descent).txt" \
+"lagrange_output_L_Hip_vel (gradient_descent).txt" \
 "lagrange_output_L_Hip_vel (baseline).txt" \
 --labels "GradDesc" "Baseline" > combined_table.tex
 """
@@ -14,7 +14,7 @@ python log2latex.py \
 # -------- regex --------------
 TASK_RE  = re.compile(r"🎯\s*Task:\s*(.+)")
 LINE_RE  = re.compile(r"([A-Za-z_]+):\s*([-\d.]+)\s*±\s*([-\d.]+)")
-LABEL_MAP = {"Reward": "Reward", "Cost": "Cost", "Q_c": "$Q_c$"}
+LABEL_MAP = {"Reward": "Reward", "Cost": "Cost", "Q_c Initial": "Q_c Initial", "Q_c Final": "Q_c Final"}
 
 def parse_file(path: Path) -> OrderedDict:
     """
@@ -61,11 +61,7 @@ def merge_tables(files, labels):
 
 
 def to_latex(big, labels):
-    metrics = ["Reward", "Cost"]
-    has_qc = any("$Q_c$" in d for task in big.values()
-                                 for d in task.values())
-    if has_qc:
-        metrics.append("$Q_c$")
+    metrics = ["Reward", "Cost", "Q_c Initial", "Q_c Final"]
 
     header_cols = [f"{lab} {m}" for lab in labels for m in metrics]
     col_spec = "l" + "c" * len(header_cols)

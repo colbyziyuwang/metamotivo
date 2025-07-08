@@ -1,184 +1,270 @@
-step: 100
-lr: 0.0001
-start: 0.5
-loss: MSE
 
 🎯 Task: move-ego-0-0
-✅ Reward: 276.53 ± 0.22
-⚠️ Cost:   2582.02 ± 1.40
+✅ Reward: 276.70 ± 0.51
+⚠️ Cost:   2582.24 ± 1.76
+🔍 Q_c Initial: -224.83 ± 2.63
+💰 Q_c Final:    -240.62 ± 1.03
 
 🎯 Task: move-ego-low-0-0
 ✅ Reward: 257.37 ± 1.87
 ⚠️ Cost:   3458.53 ± 2.56
+🔍 Q_c Initial: -279.89 ± 2.07
+💰 Q_c Final:    -302.60 ± 0.13
 
 🎯 Task: headstand
 ✅ Reward: 40.06 ± 31.76
 ⚠️ Cost:   12847.05 ± 792.07
+🔍 Q_c Initial: -284.51 ± 10.37
+💰 Q_c Final:    -298.66 ± 3.74
 
 🎯 Task: move-ego-0-2
 ✅ Reward: 261.77 ± 1.98
 ⚠️ Cost:   9334.52 ± 182.90
+🔍 Q_c Initial: -227.65 ± 4.11
+💰 Q_c Final:    -244.34 ± 4.03
 
 🎯 Task: move-ego-0-4
 ✅ Reward: 253.92 ± 1.10
 ⚠️ Cost:   15740.20 ± 518.77
+🔍 Q_c Initial: -246.18 ± 2.32
+💰 Q_c Final:    -277.29 ± 7.81
 
 🎯 Task: move-ego--90-2
 ✅ Reward: 219.23 ± 3.24
 ⚠️ Cost:   3273.97 ± 133.21
+🔍 Q_c Initial: -222.83 ± 4.41
+💰 Q_c Final:    -237.11 ± 3.27
 
 🎯 Task: move-ego--90-4
 ✅ Reward: 175.94 ± 14.57
 ⚠️ Cost:   10016.78 ± 1035.96
+🔍 Q_c Initial: -228.34 ± 2.28
+💰 Q_c Final:    -275.76 ± 11.28
 
 🎯 Task: move-ego-90-2
 ✅ Reward: 78.90 ± 19.42
 ⚠️ Cost:   2708.96 ± 773.92
+🔍 Q_c Initial: -188.90 ± 2.96
+💰 Q_c Final:    -234.43 ± 19.80
 
 🎯 Task: move-ego-90-4
 ✅ Reward: 128.24 ± 59.05
 ⚠️ Cost:   7973.14 ± 4881.58
+🔍 Q_c Initial: -217.21 ± 3.45
+💰 Q_c Final:    -242.50 ± 14.44
 
 🎯 Task: move-ego-180-2
 ✅ Reward: 225.72 ± 7.34
 ⚠️ Cost:   2248.86 ± 255.95
+🔍 Q_c Initial: -226.94 ± 3.83
+💰 Q_c Final:    -232.80 ± 1.77
 
 🎯 Task: move-ego-180-4
 ✅ Reward: 202.56 ± 3.81
 ⚠️ Cost:   1656.14 ± 155.12
+🔍 Q_c Initial: -230.90 ± 3.99
+💰 Q_c Final:    -235.60 ± 1.36
 
 🎯 Task: move-ego-low-0-2
 ✅ Reward: 186.04 ± 34.75
 ⚠️ Cost:   10670.72 ± 1243.23
+🔍 Q_c Initial: -264.15 ± 1.76
+💰 Q_c Final:    -302.92 ± 0.25
 
 🎯 Task: move-ego-low--90-2
 ✅ Reward: 245.89 ± 5.32
 ⚠️ Cost:   3932.73 ± 148.94
+🔍 Q_c Initial: -298.28 ± 7.67
+💰 Q_c Final:    -303.55 ± 0.25
 
 🎯 Task: move-ego-low-90-2
 ✅ Reward: 209.66 ± 62.42
 ⚠️ Cost:   6649.55 ± 1648.42
+🔍 Q_c Initial: -237.01 ± 3.26
+💰 Q_c Final:    -244.55 ± 10.80
 
 🎯 Task: move-ego-low-180-2
 ✅ Reward: 117.23 ± 30.57
 ⚠️ Cost:   3439.14 ± 188.53
+🔍 Q_c Initial: -251.67 ± 6.20
+💰 Q_c Final:    -261.86 ± 2.23
 
 🎯 Task: jump-2
 ✅ Reward: 36.53 ± 1.81
 ⚠️ Cost:   4886.75 ± 105.41
+🔍 Q_c Initial: -294.35 ± 5.62
+💰 Q_c Final:    -305.86 ± 0.29
 
 🎯 Task: rotate-x--5-0.8
 ✅ Reward: 18.40 ± 9.74
 ⚠️ Cost:   18545.78 ± 1932.09
+🔍 Q_c Initial: -289.33 ± 9.97
+💰 Q_c Final:    -302.82 ± 0.13
 
 🎯 Task: rotate-x-5-0.8
 ✅ Reward: 3.40 ± 5.79
 ⚠️ Cost:   4834.98 ± 1333.55
+🔍 Q_c Initial: -313.66 ± 11.95
+💰 Q_c Final:    -302.17 ± 1.04
 
 🎯 Task: rotate-y--5-0.8
 ✅ Reward: 221.57 ± 28.03
 ⚠️ Cost:   5359.10 ± 638.56
+🔍 Q_c Initial: -263.28 ± 5.97
+💰 Q_c Final:    -281.76 ± 4.31
 
 🎯 Task: rotate-y-5-0.8
 ✅ Reward: 142.89 ± 99.92
 ⚠️ Cost:   7155.34 ± 1447.74
+🔍 Q_c Initial: -241.07 ± 1.39
+💰 Q_c Final:    -276.79 ± 16.32
 
 🎯 Task: rotate-z--5-0.8
 ✅ Reward: 45.46 ± 52.84
 ⚠️ Cost:   18115.64 ± 1745.05
+🔍 Q_c Initial: -247.95 ± 5.48
+💰 Q_c Final:    -283.73 ± 9.95
 
 🎯 Task: rotate-z-5-0.8
 ✅ Reward: 123.87 ± 9.37
 ⚠️ Cost:   14449.39 ± 1512.01
+🔍 Q_c Initial: -316.78 ± 4.77
+💰 Q_c Final:    -304.85 ± 0.39
 
 🎯 Task: raisearms-l-l
 ✅ Reward: 272.89 ± 0.04
 ⚠️ Cost:   684.08 ± 0.03
+🔍 Q_c Initial: -211.95 ± 0.14
+💰 Q_c Final:    -236.04 ± 0.20
 
 🎯 Task: raisearms-l-m
 ✅ Reward: 263.01 ± 1.69
 ⚠️ Cost:   195.54 ± 0.17
+🔍 Q_c Initial: -196.34 ± 0.18
+💰 Q_c Final:    -199.36 ± 0.17
 
 🎯 Task: raisearms-l-h
 ✅ Reward: 50.55 ± 1.44
 ⚠️ Cost:   1013.24 ± 84.51
+🔍 Q_c Initial: -166.83 ± 3.60
+💰 Q_c Final:    -189.44 ± 6.05
 
 🎯 Task: raisearms-m-l
 ✅ Reward: 87.40 ± 1.19
 ⚠️ Cost:   75.61 ± 0.32
+🔍 Q_c Initial: -204.88 ± 0.33
+💰 Q_c Final:    -212.91 ± 0.41
 
 🎯 Task: raisearms-m-m
 ✅ Reward: 265.58 ± 0.02
 ⚠️ Cost:   67.91 ± 0.06
+🔍 Q_c Initial: -244.95 ± 0.13
+💰 Q_c Final:    -244.08 ± 0.13
 
 🎯 Task: raisearms-m-h
 ✅ Reward: 163.29 ± 10.28
 ⚠️ Cost:   267.13 ± 19.36
+🔍 Q_c Initial: -242.18 ± 0.37
+💰 Q_c Final:    -248.42 ± 0.12
 
 🎯 Task: raisearms-h-l
 ✅ Reward: 91.40 ± 76.37
 ⚠️ Cost:   4624.60 ± 17.78
+🔍 Q_c Initial: -186.96 ± 3.68
+💰 Q_c Final:    -210.59 ± 27.44
 
 🎯 Task: raisearms-h-m
 ✅ Reward: 180.23 ± 15.66
 ⚠️ Cost:   242.83 ± 0.97
+🔍 Q_c Initial: -208.11 ± 0.07
+💰 Q_c Final:    -229.45 ± 0.40
 
 🎯 Task: raisearms-h-h
 ✅ Reward: 260.80 ± 0.47
 ⚠️ Cost:   312.24 ± 6.35
+🔍 Q_c Initial: -214.78 ± 0.41
+💰 Q_c Final:    -223.16 ± 0.05
 
 🎯 Task: crouch-0
 ✅ Reward: 217.52 ± 37.06
 ⚠️ Cost:   4645.85 ± 5.47
+🔍 Q_c Initial: -307.80 ± 6.60
+💰 Q_c Final:    -302.76 ± 0.23
 
 🎯 Task: sitonground
 ✅ Reward: 183.08 ± 4.02
 ⚠️ Cost:   2692.94 ± 15.23
+🔍 Q_c Initial: -282.53 ± 3.79
+💰 Q_c Final:    -288.03 ± 0.96
 
 🎯 Task: lieonground-up
 ✅ Reward: 211.87 ± 5.34
 ⚠️ Cost:   10259.40 ± 132.51
+🔍 Q_c Initial: -248.69 ± 2.78
+💰 Q_c Final:    -252.03 ± 7.08
 
 🎯 Task: lieonground-down
 ✅ Reward: 180.26 ± 8.66
 ⚠️ Cost:   1781.88 ± 4.05
+🔍 Q_c Initial: -255.32 ± 1.18
+💰 Q_c Final:    -257.97 ± 1.18
 
 🎯 Task: split-0.5
 ✅ Reward: 253.59 ± 0.20
 ⚠️ Cost:   3076.34 ± 1.30
+🔍 Q_c Initial: -274.30 ± 2.69
+💰 Q_c Final:    -294.90 ± 1.61
 
 🎯 Task: split-1
 ✅ Reward: 138.31 ± 28.69
 ⚠️ Cost:   8249.84 ± 25.04
+🔍 Q_c Initial: -302.07 ± 9.62
+💰 Q_c Final:    -302.31 ± 2.27
 
 🎯 Task: crawl-0.4-0-u
 ✅ Reward: 100.21 ± 11.78
 ⚠️ Cost:   3857.75 ± 40.33
+🔍 Q_c Initial: -263.11 ± 3.13
+💰 Q_c Final:    -277.65 ± 16.79
 
 🎯 Task: crawl-0.4-2-u
 ✅ Reward: 18.62 ± 7.22
 ⚠️ Cost:   1348.81 ± 16.16
+🔍 Q_c Initial: -253.66 ± 0.74
+💰 Q_c Final:    -264.36 ± 8.51
 
 🎯 Task: crawl-0.5-0-u
 ✅ Reward: 98.64 ± 12.85
 ⚠️ Cost:   4571.03 ± 53.22
+🔍 Q_c Initial: -262.02 ± 2.83
+💰 Q_c Final:    -271.69 ± 17.16
 
 🎯 Task: crawl-0.5-2-u
 ✅ Reward: 12.54 ± 2.69
 ⚠️ Cost:   5212.97 ± 34.48
+🔍 Q_c Initial: -260.40 ± 3.63
+💰 Q_c Final:    -283.78 ± 8.22
 
 🎯 Task: crawl-0.4-0-d
 ✅ Reward: 217.71 ± 3.34
 ⚠️ Cost:   2625.65 ± 1.80
+🔍 Q_c Initial: -283.21 ± 3.88
+💰 Q_c Final:    -299.40 ± 0.08
 
 🎯 Task: crawl-0.4-2-d
 ✅ Reward: 9.16 ± 3.17
 ⚠️ Cost:   3762.15 ± 11.40
+🔍 Q_c Initial: -262.82 ± 6.40
+💰 Q_c Final:    -302.55 ± 0.38
 
 🎯 Task: crawl-0.5-0-d
 ✅ Reward: 128.87 ± 26.10
 ⚠️ Cost:   5408.32 ± 29.97
+🔍 Q_c Initial: -291.83 ± 4.12
+💰 Q_c Final:    -302.05 ± 0.20
 
 🎯 Task: crawl-0.5-2-d
 ✅ Reward: 32.55 ± 7.33
 ⚠️ Cost:   8223.12 ± 20.70
+🔍 Q_c Initial: -251.29 ± 6.95
+💰 Q_c Final:    -294.19 ± 13.63

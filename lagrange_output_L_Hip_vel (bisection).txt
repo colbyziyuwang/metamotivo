@@ -1,0 +1,26 @@
+
+🎯 Task: move-ego-0-0
+✅ Reward: 273.38 ± 0.49
+⚠️ Cost:   2582.74 ± 4.16
+🔍 Q_c Initial: -227.43 ± 2.65
+💰 Q_c Final:    -212.05 ± 4.59
+
+🎯 Task: move-ego-low-0-0
+✅ Reward: 233.79 ± 2.95
+⚠️ Cost:   3427.92 ± 3.92
+🔍 Q_c Initial: -279.89 ± 2.07
+💰 Q_c Final:    -268.95 ± 2.90
+
+🎯 Task: headstand
+✅ Reward: 36.92 ± 16.74
+⚠️ Cost:   14101.26 ± 1374.57
+🔍 Q_c Initial: -284.51 ± 10.37
+💰 Q_c Final:    -279.14 ± 13.13
+
+🎯 Task: move-ego-0-2
+✅ Reward: 263.29 ± 0.49
+⚠️ Cost:   7711.07 ± 141.24
+🔍 Q_c Initial: -227.65 ± 4.11
+💰 Q_c Final:    -224.50 ± 5.37
+
+🎯 Task: move-ego-0-4

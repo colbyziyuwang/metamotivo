@@ -59,6 +59,7 @@ if __name__ == "__main__":
             task_rewards = []
             task_costs = []
             q_c_values = []
+            q_c_initials = []
 
             for seed in range(5):
                 set_seed(seed)
@@ -121,6 +122,9 @@ if __name__ == "__main__":
                             a.unsqueeze(0).unsqueeze(0)
                         ).squeeze()
 
+                    # Store initial Q_c values
+                    if step == 0: q_c_initials.append(Q.mean().item())
+
                     if (METHOD == "gradient_descent"):
                         loss = 0.5 * (Q.mean() - eta).pow(2)    # scalar
 
@@ -139,13 +143,13 @@ if __name__ == "__main__":
                             lambda_max_t = lambda_t
                         elif (Q.mean() > eta):
                             lambda_min_t = lambda_t
+                        lambda_t = 0.5 * (lambda_min_t + lambda_max_t)
                     else: # baseline
-                        if (abs(Q.mean() - eta) < threshold):
+                        sign = torch.sign(Q.mean() - eta)        # +1 if Q>η, -1 if Q<η
+                        # heuristic: move against the sign to push Q toward η
+                        lambda_t.add_(-sign * step_size)
+                        if abs(Q.mean() - eta) < threshold:
                             break
-                        elif (Q.mean() < eta):
-                            lambda_t -= step_size
-                        elif (Q.mean() > eta):
-                            lambda_t += step_size
 
                 # Final rollout
                 observation, _ = env.reset()
@@ -185,8 +189,8 @@ if __name__ == "__main__":
                 dims_str = f"dims{'_'.join(map(str, specific_dimensions))}"
                 video_filename = f"{task.replace('/', '_')}_seed{seed}_{range_str}_{dims_str}_eta_{eta}_{body_part}_{kind}_lagrange.mp4"
                 video_path = os.path.join(video_dir, video_filename)
-                if (seed == 0):
-                    media.write_video(video_path, frames, fps=30)
+                # if (seed == 0):
+                #     media.write_video(video_path, frames, fps=30)
 
             reward_mean = np.mean(task_rewards)
             reward_std = np.std(task_rewards)
@@ -194,11 +198,14 @@ if __name__ == "__main__":
             cost_std = np.std(task_costs)
             q_c_mean = np.mean(q_c_values)
             q_c_std = np.std(q_c_values)
+            q_c_initial_mean = np.mean(q_c_initials)
+            q_c_initial_std = np.std(q_c_initials)
 
             result = (
                 f"✅ Reward: {reward_mean:.2f} ± {reward_std:.2f}\n"
                 f"⚠️ Cost:   {cost_mean:.2f} ± {cost_std:.2f}\n"
-                f"💰 Q_c:    {q_c_mean:.2f} ± {q_c_std:.2f}\n"
+                f"🔍 Q_c Initial: {q_c_initial_mean:.2f} ± {q_c_initial_std:.2f}\n"
+                f"💰 Q_c Final:    {q_c_mean:.2f} ± {q_c_std:.2f}\n"
             )
             print(result)
             f.write(result)
