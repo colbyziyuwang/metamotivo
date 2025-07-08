@@ -6,9 +6,9 @@ from collections import OrderedDict, defaultdict
 # Example usage
 """
 python log2latex.py \
->    "lagrange_output_L_Hip_vel (gradient descent).txt" \
->    "lagrange_output_L_Hip_vel (baseline).txt" \
->    --labels "GradDesc" "Baseline" > combined_table.tex
+"lagrange_output_L_Hip_vel (gradient descent).txt" \
+"lagrange_output_L_Hip_vel (baseline).txt" \
+--labels "GradDesc" "Baseline" > combined_table.tex
 """
 
 # -------- regex --------------
