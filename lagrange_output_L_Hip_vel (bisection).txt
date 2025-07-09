@@ -1,9 +1,9 @@
 
 🎯 Task: move-ego-0-0
-✅ Reward: 273.38 ± 0.49
-⚠️ Cost:   2582.74 ± 4.16
-🔍 Q_c Initial: -227.43 ± 2.65
-💰 Q_c Final:    -212.05 ± 4.59
+✅ Reward: 273.81 ± 0.55
+⚠️ Cost:   2583.52 ± 4.07
+🔍 Q_c Initial: -223.52 ± 2.69
+💰 Q_c Final:    -208.29 ± 4.73
 
 🎯 Task: move-ego-low-0-0
 ✅ Reward: 233.79 ± 2.95
@@ -24,3 +24,247 @@
 💰 Q_c Final:    -224.50 ± 5.37
 
 🎯 Task: move-ego-0-4
+✅ Reward: 251.77 ± 1.38
+⚠️ Cost:   14207.90 ± 308.80
+🔍 Q_c Initial: -246.18 ± 2.32
+💰 Q_c Final:    -242.11 ± 4.92
+
+🎯 Task: move-ego--90-2
+✅ Reward: 229.14 ± 3.07
+⚠️ Cost:   3393.91 ± 205.04
+🔍 Q_c Initial: -222.83 ± 4.41
+💰 Q_c Final:    -212.95 ± 5.26
+
+🎯 Task: move-ego--90-4
+✅ Reward: 206.41 ± 14.03
+⚠️ Cost:   11877.03 ± 894.95
+🔍 Q_c Initial: -228.34 ± 2.28
+💰 Q_c Final:    -222.15 ± 3.01
+
+🎯 Task: move-ego-90-2
+✅ Reward: 236.11 ± 4.48
+⚠️ Cost:   7753.44 ± 471.24
+🔍 Q_c Initial: -188.90 ± 2.96
+💰 Q_c Final:    -205.33 ± 6.27
+
+🎯 Task: move-ego-90-4
+✅ Reward: 188.60 ± 4.78
+⚠️ Cost:   11471.73 ± 285.02
+🔍 Q_c Initial: -217.21 ± 3.45
+💰 Q_c Final:    -225.80 ± 4.63
+
+🎯 Task: move-ego-180-2
+✅ Reward: 229.26 ± 4.59
+⚠️ Cost:   2150.25 ± 366.65
+🔍 Q_c Initial: -226.94 ± 3.83
+💰 Q_c Final:    -213.78 ± 4.94
+
+🎯 Task: move-ego-180-4
+✅ Reward: 181.92 ± 2.67
+⚠️ Cost:   1672.82 ± 262.71
+🔍 Q_c Initial: -230.90 ± 3.99
+💰 Q_c Final:    -217.77 ± 6.40
+
+🎯 Task: move-ego-low-0-2
+✅ Reward: 138.59 ± 12.06
+⚠️ Cost:   4919.04 ± 140.30
+🔍 Q_c Initial: -264.15 ± 1.76
+💰 Q_c Final:    -243.45 ± 2.24
+
+🎯 Task: move-ego-low--90-2
+✅ Reward: 246.87 ± 4.20
+⚠️ Cost:   3930.47 ± 195.04
+🔍 Q_c Initial: -298.28 ± 7.67
+💰 Q_c Final:    -277.36 ± 24.13
+
+🎯 Task: move-ego-low-90-2
+✅ Reward: 247.70 ± 2.00
+⚠️ Cost:   6422.33 ± 197.05
+🔍 Q_c Initial: -237.01 ± 3.26
+💰 Q_c Final:    -238.31 ± 5.33
+
+🎯 Task: move-ego-low-180-2
+✅ Reward: 160.28 ± 20.91
+⚠️ Cost:   3182.38 ± 307.98
+🔍 Q_c Initial: -251.67 ± 6.20
+💰 Q_c Final:    -238.31 ± 11.95
+
+🎯 Task: jump-2
+✅ Reward: 28.50 ± 5.78
+⚠️ Cost:   4726.26 ± 414.66
+🔍 Q_c Initial: -294.35 ± 5.62
+💰 Q_c Final:    -281.08 ± 13.58
+
+🎯 Task: rotate-x--5-0.8
+✅ Reward: 15.88 ± 6.22
+⚠️ Cost:   19041.65 ± 1917.34
+🔍 Q_c Initial: -289.33 ± 9.97
+💰 Q_c Final:    -275.75 ± 18.74
+
+🎯 Task: rotate-x-5-0.8
+✅ Reward: 0.33 ± 0.20
+⚠️ Cost:   5134.71 ± 244.87
+🔍 Q_c Initial: -313.66 ± 11.95
+💰 Q_c Final:    -314.48 ± 22.69
+
+🎯 Task: rotate-y--5-0.8
+✅ Reward: 261.38 ± 6.83
+⚠️ Cost:   5380.21 ± 151.80
+🔍 Q_c Initial: -263.28 ± 5.97
+💰 Q_c Final:    -240.99 ± 12.39
+
+🎯 Task: rotate-y-5-0.8
+✅ Reward: 176.19 ± 31.43
+⚠️ Cost:   3943.31 ± 458.99
+🔍 Q_c Initial: -241.07 ± 1.39
+💰 Q_c Final:    -223.66 ± 2.24
+
+🎯 Task: rotate-z--5-0.8
+✅ Reward: 66.23 ± 31.02
+⚠️ Cost:   18033.28 ± 1974.29
+🔍 Q_c Initial: -247.95 ± 5.48
+💰 Q_c Final:    -254.46 ± 14.07
+
+🎯 Task: rotate-z-5-0.8
+✅ Reward: 131.20 ± 0.00
+⚠️ Cost:   13394.72 ± 0.00
+🔍 Q_c Initial: -316.78 ± 4.77
+💰 Q_c Final:    -339.42 ± 0.00
+
+🎯 Task: raisearms-l-l
+✅ Reward: 268.30 ± 0.02
+⚠️ Cost:   681.03 ± 0.63
+🔍 Q_c Initial: -211.95 ± 0.14
+💰 Q_c Final:    -186.74 ± 0.27
+
+🎯 Task: raisearms-l-m
+✅ Reward: 236.67 ± 0.86
+⚠️ Cost:   222.99 ± 0.19
+🔍 Q_c Initial: -196.34 ± 0.18
+💰 Q_c Final:    -192.29 ± 0.16
+
+🎯 Task: raisearms-l-h
+✅ Reward: 52.52 ± 0.09
+⚠️ Cost:   909.94 ± 7.40
+🔍 Q_c Initial: -166.83 ± 3.60
+💰 Q_c Final:    -181.05 ± 5.33
+
+🎯 Task: raisearms-m-l
+✅ Reward: 178.45 ± 0.38
+⚠️ Cost:   87.24 ± 0.37
+🔍 Q_c Initial: -204.88 ± 0.33
+💰 Q_c Final:    -201.36 ± 0.37
+
+🎯 Task: raisearms-m-m
+✅ Reward: 263.33 ± 0.03
+⚠️ Cost:   73.93 ± 0.08
+🔍 Q_c Initial: -244.95 ± 0.13
+💰 Q_c Final:    -228.16 ± 0.21
+
+🎯 Task: raisearms-m-h
+✅ Reward: 261.92 ± 0.08
+⚠️ Cost:   232.68 ± 0.81
+🔍 Q_c Initial: -242.18 ± 0.37
+💰 Q_c Final:    -233.92 ± 0.41
+
+🎯 Task: raisearms-h-l
+✅ Reward: 72.65 ± 56.14
+⚠️ Cost:   4601.67 ± 37.51
+🔍 Q_c Initial: -186.96 ± 3.68
+💰 Q_c Final:    -187.87 ± 6.70
+
+🎯 Task: raisearms-h-m
+✅ Reward: 72.74 ± 3.52
+⚠️ Cost:   245.84 ± 0.43
+🔍 Q_c Initial: -208.11 ± 0.07
+💰 Q_c Final:    -196.24 ± 0.13
+
+🎯 Task: raisearms-h-h
+✅ Reward: 60.99 ± 19.26
+⚠️ Cost:   307.67 ± 2.96
+🔍 Q_c Initial: -214.78 ± 0.41
+💰 Q_c Final:    -199.49 ± 1.57
+
+🎯 Task: crouch-0
+✅ Reward: 239.98 ± 3.73
+⚠️ Cost:   4633.20 ± 19.24
+🔍 Q_c Initial: -307.80 ± 6.60
+💰 Q_c Final:    -320.25 ± 24.96
+
+🎯 Task: sitonground
+✅ Reward: 191.77 ± 5.53
+⚠️ Cost:   2636.33 ± 3.71
+🔍 Q_c Initial: -282.53 ± 3.79
+💰 Q_c Final:    -267.24 ± 5.26
+
+🎯 Task: lieonground-up
+✅ Reward: 212.16 ± 6.48
+⚠️ Cost:   10154.47 ± 77.61
+🔍 Q_c Initial: -248.69 ± 2.78
+💰 Q_c Final:    -254.44 ± 4.88
+
+🎯 Task: lieonground-down
+✅ Reward: 171.17 ± 12.07
+⚠️ Cost:   1970.13 ± 16.22
+🔍 Q_c Initial: -255.32 ± 1.18
+💰 Q_c Final:    -258.03 ± 1.86
+
+🎯 Task: split-0.5
+✅ Reward: 222.27 ± 7.88
+⚠️ Cost:   3084.35 ± 5.83
+🔍 Q_c Initial: -274.30 ± 2.69
+💰 Q_c Final:    -260.84 ± 2.57
+
+🎯 Task: split-1
+✅ Reward: 126.60 ± 14.99
+⚠️ Cost:   8250.40 ± 6.34
+🔍 Q_c Initial: -302.07 ± 9.62
+💰 Q_c Final:    -295.59 ± 15.99
+
+🎯 Task: crawl-0.4-0-u
+✅ Reward: 103.88 ± 5.70
+⚠️ Cost:   3825.53 ± 48.98
+🔍 Q_c Initial: -263.11 ± 3.13
+💰 Q_c Final:    -267.51 ± 6.72
+
+🎯 Task: crawl-0.4-2-u
+✅ Reward: 15.61 ± 6.19
+⚠️ Cost:   1486.19 ± 76.17
+🔍 Q_c Initial: -253.66 ± 0.74
+💰 Q_c Final:    -263.33 ± 2.05
+
+🎯 Task: crawl-0.5-0-u
+✅ Reward: 99.38 ± 11.44
+⚠️ Cost:   4530.05 ± 19.16
+🔍 Q_c Initial: -262.02 ± 2.83
+💰 Q_c Final:    -264.14 ± 6.17
+
+🎯 Task: crawl-0.5-2-u
+✅ Reward: 16.84 ± 4.77
+⚠️ Cost:   5179.98 ± 45.42
+🔍 Q_c Initial: -260.40 ± 3.63
+💰 Q_c Final:    -262.85 ± 5.65
+
+🎯 Task: crawl-0.4-0-d
+✅ Reward: 110.23 ± 29.90
+⚠️ Cost:   2793.91 ± 34.77
+🔍 Q_c Initial: -283.21 ± 3.88
+💰 Q_c Final:    -271.01 ± 5.52
+
+🎯 Task: crawl-0.4-2-d
+✅ Reward: 30.29 ± 6.87
+⚠️ Cost:   3963.74 ± 66.77
+🔍 Q_c Initial: -262.82 ± 6.40
+💰 Q_c Final:    -252.83 ± 7.22
+
+🎯 Task: crawl-0.5-0-d
+✅ Reward: 78.20 ± 60.03
+⚠️ Cost:   5440.31 ± 42.79
+🔍 Q_c Initial: -291.83 ± 4.12
+💰 Q_c Final:    -282.72 ± 7.70
+
+🎯 Task: crawl-0.5-2-d
+✅ Reward: 31.70 ± 4.43
+⚠️ Cost:   8399.28 ± 123.40
+🔍 Q_c Initial: -251.29 ± 6.95
+💰 Q_c Final:    -247.64 ± 4.07

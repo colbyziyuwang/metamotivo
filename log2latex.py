@@ -7,14 +7,21 @@ from collections import OrderedDict, defaultdict
 """
 python log2latex.py \
 "lagrange_output_L_Hip_vel (gradient_descent).txt" \
+"lagrange_output_L_Hip_vel (bisection).txt" \
 "lagrange_output_L_Hip_vel (baseline).txt" \
---labels "GradDesc" "Baseline" > combined_table.tex
+--labels "GradDesc" "Bisection" "Baseline" > combined_table.tex
 """
 
 # -------- regex --------------
 TASK_RE  = re.compile(r"🎯\s*Task:\s*(.+)")
-LINE_RE  = re.compile(r"([A-Za-z_]+):\s*([-\d.]+)\s*±\s*([-\d.]+)")
-LABEL_MAP = {"Reward": "Reward", "Cost": "Cost", "Q_c Initial": "Q_c Initial", "Q_c Final": "Q_c Final"}
+LINE_RE  = re.compile(r"([\w\s]+):\s*([-\d.]+)\s*±\s*([-\d.]+)")
+
+LABEL_MAP = {
+    "Reward": "Reward",
+    "Cost": "Cost",
+    "Q_c Initial": "Q_c Initial",
+    "Q_c Final"  : "Q_c Final",
+}
 
 def parse_file(path: Path) -> OrderedDict:
     """
@@ -56,6 +63,7 @@ def merge_tables(files, labels):
         parsed = parse_file(Path(f))
         for task, metrics in parsed.items():
             for mlabel, val in metrics.items():
+                mlabel = mlabel.strip()
                 big[task][lab][LABEL_MAP[mlabel]] = val
     return big
 

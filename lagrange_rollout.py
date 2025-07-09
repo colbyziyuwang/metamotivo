@@ -14,7 +14,7 @@ import mediapy as media
 
 os.environ["OMP_NUM_THREADS"] = "1"
 
-METHOD = "baseline" # gradient_descent, baseline, bisection
+METHOD = "bisection" # gradient_descent, baseline, bisection
 
 if __name__ == "__main__":
     local_dir = "metamotivo-S-1-datasets"
