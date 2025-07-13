@@ -1,0 +1,1485 @@
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.1000
+• eta:         -300
+• lr:          0.0001
+• steps:       100
+✅ Reward: 45.04 ± 3.36
+⚠️ Cost:   53.33 ± 1.02
+🔍 Q_c Initial: -228.24 ± 5.85
+💰 Q_c Final:    -227.77 ± 0.62
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.1000
+• eta:         -300
+• lr:          0.0001
+• steps:       200
+✅ Reward: 44.25 ± 1.74
+⚠️ Cost:   53.75 ± 0.24
+🔍 Q_c Initial: -228.56 ± 6.20
+💰 Q_c Final:    -227.91 ± 0.41
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.1000
+• eta:         -300
+• lr:          0.0001
+• steps:       300
+✅ Reward: 43.76 ± 1.27
+⚠️ Cost:   53.82 ± 0.17
+🔍 Q_c Initial: -228.60 ± 6.18
+💰 Q_c Final:    -227.96 ± 0.37
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.1000
+• eta:         -300
+• lr:          0.001
+• steps:       100
+✅ Reward: 45.35 ± 3.40
+⚠️ Cost:   53.34 ± 0.97
+🔍 Q_c Initial: -228.42 ± 6.27
+💰 Q_c Final:    -227.75 ± 0.65
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.1000
+• eta:         -300
+• lr:          0.001
+• steps:       200
+✅ Reward: 44.25 ± 1.74
+⚠️ Cost:   53.75 ± 0.24
+🔍 Q_c Initial: -228.56 ± 6.20
+💰 Q_c Final:    -227.91 ± 0.41
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.1000
+• eta:         -300
+• lr:          0.001
+• steps:       300
+✅ Reward: 43.76 ± 1.27
+⚠️ Cost:   53.82 ± 0.17
+🔍 Q_c Initial: -228.60 ± 6.18
+💰 Q_c Final:    -227.96 ± 0.37
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.1000
+• eta:         -300
+• lr:          0.01
+• steps:       100
+✅ Reward: 45.35 ± 3.40
+⚠️ Cost:   53.34 ± 0.97
+🔍 Q_c Initial: -228.42 ± 6.27
+💰 Q_c Final:    -227.75 ± 0.65
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.1000
+• eta:         -300
+• lr:          0.01
+• steps:       200
+✅ Reward: 44.25 ± 1.74
+⚠️ Cost:   53.75 ± 0.24
+🔍 Q_c Initial: -228.56 ± 6.20
+💰 Q_c Final:    -227.91 ± 0.41
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.1000
+• eta:         -300
+• lr:          0.01
+• steps:       300
+✅ Reward: 43.76 ± 1.27
+⚠️ Cost:   53.82 ± 0.17
+🔍 Q_c Initial: -228.60 ± 6.18
+💰 Q_c Final:    -227.96 ± 0.37
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.1000
+• eta:         -350
+• lr:          0.0001
+• steps:       100
+✅ Reward: 45.35 ± 3.40
+⚠️ Cost:   53.34 ± 0.97
+🔍 Q_c Initial: -228.42 ± 6.27
+💰 Q_c Final:    -227.75 ± 0.65
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.1000
+• eta:         -350
+• lr:          0.0001
+• steps:       200
+✅ Reward: 44.25 ± 1.74
+⚠️ Cost:   53.75 ± 0.24
+🔍 Q_c Initial: -228.56 ± 6.20
+💰 Q_c Final:    -227.91 ± 0.41
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.1000
+• eta:         -350
+• lr:          0.0001
+• steps:       300
+✅ Reward: 43.76 ± 1.27
+⚠️ Cost:   53.82 ± 0.17
+🔍 Q_c Initial: -228.60 ± 6.18
+💰 Q_c Final:    -227.96 ± 0.37
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.1000
+• eta:         -350
+• lr:          0.001
+• steps:       100
+✅ Reward: 45.35 ± 3.40
+⚠️ Cost:   53.34 ± 0.97
+🔍 Q_c Initial: -228.42 ± 6.27
+💰 Q_c Final:    -227.75 ± 0.65
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.1000
+• eta:         -350
+• lr:          0.001
+• steps:       200
+✅ Reward: 44.25 ± 1.74
+⚠️ Cost:   53.75 ± 0.24
+🔍 Q_c Initial: -228.56 ± 6.20
+💰 Q_c Final:    -227.91 ± 0.41
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.1000
+• eta:         -350
+• lr:          0.001
+• steps:       300
+✅ Reward: 43.76 ± 1.27
+⚠️ Cost:   53.82 ± 0.17
+🔍 Q_c Initial: -228.60 ± 6.18
+💰 Q_c Final:    -227.96 ± 0.37
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.1000
+• eta:         -350
+• lr:          0.01
+• steps:       100
+✅ Reward: 45.35 ± 3.40
+⚠️ Cost:   53.34 ± 0.97
+🔍 Q_c Initial: -228.42 ± 6.27
+💰 Q_c Final:    -227.75 ± 0.65
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.1000
+• eta:         -350
+• lr:          0.01
+• steps:       200
+✅ Reward: 44.25 ± 1.74
+⚠️ Cost:   53.75 ± 0.24
+🔍 Q_c Initial: -228.56 ± 6.20
+💰 Q_c Final:    -227.91 ± 0.41
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.1000
+• eta:         -350
+• lr:          0.01
+• steps:       300
+✅ Reward: 43.76 ± 1.27
+⚠️ Cost:   53.82 ± 0.17
+🔍 Q_c Initial: -228.60 ± 6.18
+💰 Q_c Final:    -227.96 ± 0.37
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.1000
+• eta:         -400
+• lr:          0.0001
+• steps:       100
+✅ Reward: 45.35 ± 3.40
+⚠️ Cost:   53.34 ± 0.97
+🔍 Q_c Initial: -228.42 ± 6.27
+💰 Q_c Final:    -227.75 ± 0.65
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.1000
+• eta:         -400
+• lr:          0.0001
+• steps:       200
+✅ Reward: 44.25 ± 1.74
+⚠️ Cost:   53.75 ± 0.24
+🔍 Q_c Initial: -228.56 ± 6.20
+💰 Q_c Final:    -227.91 ± 0.41
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.1000
+• eta:         -400
+• lr:          0.0001
+• steps:       300
+✅ Reward: 43.76 ± 1.27
+⚠️ Cost:   53.82 ± 0.17
+🔍 Q_c Initial: -228.60 ± 6.18
+💰 Q_c Final:    -227.96 ± 0.37
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.1000
+• eta:         -400
+• lr:          0.001
+• steps:       100
+✅ Reward: 45.35 ± 3.40
+⚠️ Cost:   53.34 ± 0.97
+🔍 Q_c Initial: -228.42 ± 6.27
+💰 Q_c Final:    -227.75 ± 0.65
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.1000
+• eta:         -400
+• lr:          0.001
+• steps:       200
+✅ Reward: 44.25 ± 1.74
+⚠️ Cost:   53.75 ± 0.24
+🔍 Q_c Initial: -228.56 ± 6.20
+💰 Q_c Final:    -227.91 ± 0.41
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.1000
+• eta:         -400
+• lr:          0.001
+• steps:       300
+✅ Reward: 43.76 ± 1.27
+⚠️ Cost:   53.82 ± 0.17
+🔍 Q_c Initial: -228.60 ± 6.18
+💰 Q_c Final:    -227.96 ± 0.37
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.1000
+• eta:         -400
+• lr:          0.01
+• steps:       100
+✅ Reward: 45.35 ± 3.40
+⚠️ Cost:   53.34 ± 0.97
+🔍 Q_c Initial: -228.42 ± 6.27
+💰 Q_c Final:    -227.75 ± 0.65
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.1000
+• eta:         -400
+• lr:          0.01
+• steps:       200
+✅ Reward: 44.25 ± 1.74
+⚠️ Cost:   53.75 ± 0.24
+🔍 Q_c Initial: -228.56 ± 6.20
+💰 Q_c Final:    -227.91 ± 0.41
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.1000
+• eta:         -400
+• lr:          0.01
+• steps:       300
+✅ Reward: 43.76 ± 1.27
+⚠️ Cost:   53.82 ± 0.17
+🔍 Q_c Initial: -228.60 ± 6.18
+💰 Q_c Final:    -227.96 ± 0.37
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.3000
+• eta:         -300
+• lr:          0.0001
+• steps:       100
+✅ Reward: 45.43 ± 3.54
+⚠️ Cost:   53.32 ± 1.00
+🔍 Q_c Initial: -229.11 ± 7.64
+💰 Q_c Final:    -227.74 ± 0.65
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.3000
+• eta:         -300
+• lr:          0.0001
+• steps:       200
+✅ Reward: 44.26 ± 1.75
+⚠️ Cost:   53.75 ± 0.24
+🔍 Q_c Initial: -229.24 ± 7.57
+💰 Q_c Final:    -227.91 ± 0.42
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.3000
+• eta:         -300
+• lr:          0.0001
+• steps:       300
+✅ Reward: 43.77 ± 1.27
+⚠️ Cost:   53.81 ± 0.17
+🔍 Q_c Initial: -229.29 ± 7.55
+💰 Q_c Final:    -227.96 ± 0.37
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.3000
+• eta:         -300
+• lr:          0.001
+• steps:       100
+✅ Reward: 45.43 ± 3.54
+⚠️ Cost:   53.32 ± 1.00
+🔍 Q_c Initial: -229.11 ± 7.64
+💰 Q_c Final:    -227.74 ± 0.65
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.3000
+• eta:         -300
+• lr:          0.001
+• steps:       200
+✅ Reward: 44.26 ± 1.75
+⚠️ Cost:   53.75 ± 0.24
+🔍 Q_c Initial: -229.24 ± 7.57
+💰 Q_c Final:    -227.91 ± 0.42
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.3000
+• eta:         -300
+• lr:          0.001
+• steps:       300
+✅ Reward: 43.77 ± 1.27
+⚠️ Cost:   53.81 ± 0.17
+🔍 Q_c Initial: -229.29 ± 7.55
+💰 Q_c Final:    -227.96 ± 0.37
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.3000
+• eta:         -300
+• lr:          0.01
+• steps:       100
+✅ Reward: 45.43 ± 3.54
+⚠️ Cost:   53.32 ± 1.00
+🔍 Q_c Initial: -229.11 ± 7.64
+💰 Q_c Final:    -227.74 ± 0.65
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.3000
+• eta:         -300
+• lr:          0.01
+• steps:       200
+✅ Reward: 44.26 ± 1.75
+⚠️ Cost:   53.75 ± 0.24
+🔍 Q_c Initial: -229.24 ± 7.57
+💰 Q_c Final:    -227.91 ± 0.42
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.3000
+• eta:         -300
+• lr:          0.01
+• steps:       300
+✅ Reward: 43.77 ± 1.27
+⚠️ Cost:   53.81 ± 0.17
+🔍 Q_c Initial: -229.29 ± 7.55
+💰 Q_c Final:    -227.96 ± 0.37
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.3000
+• eta:         -350
+• lr:          0.0001
+• steps:       100
+✅ Reward: 45.43 ± 3.54
+⚠️ Cost:   53.32 ± 1.00
+🔍 Q_c Initial: -229.11 ± 7.64
+💰 Q_c Final:    -227.74 ± 0.65
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.3000
+• eta:         -350
+• lr:          0.0001
+• steps:       200
+✅ Reward: 44.26 ± 1.75
+⚠️ Cost:   53.75 ± 0.24
+🔍 Q_c Initial: -229.24 ± 7.57
+💰 Q_c Final:    -227.91 ± 0.42
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.3000
+• eta:         -350
+• lr:          0.0001
+• steps:       300
+✅ Reward: 43.77 ± 1.27
+⚠️ Cost:   53.81 ± 0.17
+🔍 Q_c Initial: -229.29 ± 7.55
+💰 Q_c Final:    -227.96 ± 0.37
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.3000
+• eta:         -350
+• lr:          0.001
+• steps:       100
+✅ Reward: 45.43 ± 3.54
+⚠️ Cost:   53.32 ± 1.00
+🔍 Q_c Initial: -229.11 ± 7.64
+💰 Q_c Final:    -227.74 ± 0.65
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.3000
+• eta:         -350
+• lr:          0.001
+• steps:       200
+✅ Reward: 44.26 ± 1.75
+⚠️ Cost:   53.75 ± 0.24
+🔍 Q_c Initial: -229.24 ± 7.57
+💰 Q_c Final:    -227.91 ± 0.42
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.3000
+• eta:         -350
+• lr:          0.001
+• steps:       300
+✅ Reward: 43.77 ± 1.27
+⚠️ Cost:   53.81 ± 0.17
+🔍 Q_c Initial: -229.29 ± 7.55
+💰 Q_c Final:    -227.96 ± 0.37
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.3000
+• eta:         -350
+• lr:          0.01
+• steps:       100
+✅ Reward: 45.43 ± 3.54
+⚠️ Cost:   53.32 ± 1.00
+🔍 Q_c Initial: -229.11 ± 7.64
+💰 Q_c Final:    -227.74 ± 0.65
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.3000
+• eta:         -350
+• lr:          0.01
+• steps:       200
+✅ Reward: 44.26 ± 1.75
+⚠️ Cost:   53.75 ± 0.24
+🔍 Q_c Initial: -229.24 ± 7.57
+💰 Q_c Final:    -227.91 ± 0.42
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.3000
+• eta:         -350
+• lr:          0.01
+• steps:       300
+✅ Reward: 43.77 ± 1.27
+⚠️ Cost:   53.81 ± 0.17
+🔍 Q_c Initial: -229.29 ± 7.55
+💰 Q_c Final:    -227.96 ± 0.37
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.3000
+• eta:         -400
+• lr:          0.0001
+• steps:       100
+✅ Reward: 45.43 ± 3.54
+⚠️ Cost:   53.32 ± 1.00
+🔍 Q_c Initial: -229.11 ± 7.64
+💰 Q_c Final:    -227.74 ± 0.65
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.3000
+• eta:         -400
+• lr:          0.0001
+• steps:       200
+✅ Reward: 44.26 ± 1.75
+⚠️ Cost:   53.75 ± 0.24
+🔍 Q_c Initial: -229.24 ± 7.57
+💰 Q_c Final:    -227.91 ± 0.42
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.3000
+• eta:         -400
+• lr:          0.0001
+• steps:       300
+✅ Reward: 43.77 ± 1.27
+⚠️ Cost:   53.81 ± 0.17
+🔍 Q_c Initial: -229.29 ± 7.55
+💰 Q_c Final:    -227.96 ± 0.37
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.3000
+• eta:         -400
+• lr:          0.001
+• steps:       100
+✅ Reward: 45.43 ± 3.54
+⚠️ Cost:   53.32 ± 1.00
+🔍 Q_c Initial: -229.11 ± 7.64
+💰 Q_c Final:    -227.74 ± 0.65
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.3000
+• eta:         -400
+• lr:          0.001
+• steps:       200
+✅ Reward: 44.26 ± 1.75
+⚠️ Cost:   53.75 ± 0.24
+🔍 Q_c Initial: -229.24 ± 7.57
+💰 Q_c Final:    -227.91 ± 0.42
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.3000
+• eta:         -400
+• lr:          0.001
+• steps:       300
+✅ Reward: 43.77 ± 1.27
+⚠️ Cost:   53.81 ± 0.17
+🔍 Q_c Initial: -229.29 ± 7.55
+💰 Q_c Final:    -227.96 ± 0.37
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.3000
+• eta:         -400
+• lr:          0.01
+• steps:       100
+✅ Reward: 45.43 ± 3.54
+⚠️ Cost:   53.32 ± 1.00
+🔍 Q_c Initial: -229.11 ± 7.64
+💰 Q_c Final:    -227.74 ± 0.65
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.3000
+• eta:         -400
+• lr:          0.01
+• steps:       200
+✅ Reward: 44.26 ± 1.75
+⚠️ Cost:   53.75 ± 0.24
+🔍 Q_c Initial: -229.24 ± 7.57
+💰 Q_c Final:    -227.91 ± 0.42
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.3000
+• eta:         -400
+• lr:          0.01
+• steps:       300
+✅ Reward: 43.77 ± 1.27
+⚠️ Cost:   53.81 ± 0.17
+🔍 Q_c Initial: -229.29 ± 7.55
+💰 Q_c Final:    -227.96 ± 0.37
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.5000
+• eta:         -300
+• lr:          0.0001
+• steps:       100
+✅ Reward: 45.51 ± 3.69
+⚠️ Cost:   53.32 ± 1.01
+🔍 Q_c Initial: -229.23 ± 7.89
+💰 Q_c Final:    -227.74 ± 0.66
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.5000
+• eta:         -300
+• lr:          0.0001
+• steps:       200
+✅ Reward: 44.27 ± 1.77
+⚠️ Cost:   53.74 ± 0.24
+🔍 Q_c Initial: -229.37 ± 7.82
+💰 Q_c Final:    -227.91 ± 0.42
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.5000
+• eta:         -300
+• lr:          0.0001
+• steps:       300
+✅ Reward: 43.77 ± 1.28
+⚠️ Cost:   53.81 ± 0.17
+🔍 Q_c Initial: -229.41 ± 7.80
+💰 Q_c Final:    -227.96 ± 0.37
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.5000
+• eta:         -300
+• lr:          0.001
+• steps:       100
+✅ Reward: 45.51 ± 3.69
+⚠️ Cost:   53.32 ± 1.01
+🔍 Q_c Initial: -229.23 ± 7.89
+💰 Q_c Final:    -227.74 ± 0.66
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.5000
+• eta:         -300
+• lr:          0.001
+• steps:       200
+✅ Reward: 44.27 ± 1.77
+⚠️ Cost:   53.74 ± 0.24
+🔍 Q_c Initial: -229.37 ± 7.82
+💰 Q_c Final:    -227.91 ± 0.42
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.5000
+• eta:         -300
+• lr:          0.001
+• steps:       300
+✅ Reward: 43.77 ± 1.28
+⚠️ Cost:   53.81 ± 0.17
+🔍 Q_c Initial: -229.41 ± 7.80
+💰 Q_c Final:    -227.96 ± 0.37
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.5000
+• eta:         -300
+• lr:          0.01
+• steps:       100
+✅ Reward: 45.51 ± 3.69
+⚠️ Cost:   53.32 ± 1.01
+🔍 Q_c Initial: -229.23 ± 7.89
+💰 Q_c Final:    -227.74 ± 0.66
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.5000
+• eta:         -300
+• lr:          0.01
+• steps:       200
+✅ Reward: 44.27 ± 1.77
+⚠️ Cost:   53.74 ± 0.24
+🔍 Q_c Initial: -229.37 ± 7.82
+💰 Q_c Final:    -227.91 ± 0.42
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.5000
+• eta:         -300
+• lr:          0.01
+• steps:       300
+✅ Reward: 43.77 ± 1.28
+⚠️ Cost:   53.81 ± 0.17
+🔍 Q_c Initial: -229.41 ± 7.80
+💰 Q_c Final:    -227.96 ± 0.37
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.5000
+• eta:         -350
+• lr:          0.0001
+• steps:       100
+✅ Reward: 45.51 ± 3.69
+⚠️ Cost:   53.32 ± 1.01
+🔍 Q_c Initial: -229.23 ± 7.89
+💰 Q_c Final:    -227.74 ± 0.66
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.5000
+• eta:         -350
+• lr:          0.0001
+• steps:       200
+✅ Reward: 44.27 ± 1.77
+⚠️ Cost:   53.74 ± 0.24
+🔍 Q_c Initial: -229.37 ± 7.82
+💰 Q_c Final:    -227.91 ± 0.42
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.5000
+• eta:         -350
+• lr:          0.0001
+• steps:       300
+✅ Reward: 43.77 ± 1.28
+⚠️ Cost:   53.81 ± 0.17
+🔍 Q_c Initial: -229.41 ± 7.80
+💰 Q_c Final:    -227.96 ± 0.37
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.5000
+• eta:         -350
+• lr:          0.001
+• steps:       100
+✅ Reward: 45.51 ± 3.69
+⚠️ Cost:   53.32 ± 1.01
+🔍 Q_c Initial: -229.23 ± 7.89
+💰 Q_c Final:    -227.74 ± 0.66
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.5000
+• eta:         -350
+• lr:          0.001
+• steps:       200
+✅ Reward: 44.27 ± 1.77
+⚠️ Cost:   53.74 ± 0.24
+🔍 Q_c Initial: -229.37 ± 7.82
+💰 Q_c Final:    -227.91 ± 0.42
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.5000
+• eta:         -350
+• lr:          0.001
+• steps:       300
+✅ Reward: 43.77 ± 1.28
+⚠️ Cost:   53.81 ± 0.17
+🔍 Q_c Initial: -229.41 ± 7.80
+💰 Q_c Final:    -227.96 ± 0.37
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.5000
+• eta:         -350
+• lr:          0.01
+• steps:       100
+✅ Reward: 45.51 ± 3.69
+⚠️ Cost:   53.32 ± 1.01
+🔍 Q_c Initial: -229.23 ± 7.89
+💰 Q_c Final:    -227.74 ± 0.66
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.5000
+• eta:         -350
+• lr:          0.01
+• steps:       200
+✅ Reward: 44.27 ± 1.77
+⚠️ Cost:   53.74 ± 0.24
+🔍 Q_c Initial: -229.37 ± 7.82
+💰 Q_c Final:    -227.91 ± 0.42
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.5000
+• eta:         -350
+• lr:          0.01
+• steps:       300
+✅ Reward: 43.77 ± 1.28
+⚠️ Cost:   53.81 ± 0.17
+🔍 Q_c Initial: -229.41 ± 7.80
+💰 Q_c Final:    -227.96 ± 0.37
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.5000
+• eta:         -400
+• lr:          0.0001
+• steps:       100
+✅ Reward: 45.51 ± 3.69
+⚠️ Cost:   53.32 ± 1.01
+🔍 Q_c Initial: -229.23 ± 7.89
+💰 Q_c Final:    -227.74 ± 0.66
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.5000
+• eta:         -400
+• lr:          0.0001
+• steps:       200
+✅ Reward: 44.27 ± 1.77
+⚠️ Cost:   53.74 ± 0.24
+🔍 Q_c Initial: -229.37 ± 7.82
+💰 Q_c Final:    -227.91 ± 0.42
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.5000
+• eta:         -400
+• lr:          0.0001
+• steps:       300
+✅ Reward: 43.77 ± 1.28
+⚠️ Cost:   53.81 ± 0.17
+🔍 Q_c Initial: -229.41 ± 7.80
+💰 Q_c Final:    -227.96 ± 0.37
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.5000
+• eta:         -400
+• lr:          0.001
+• steps:       100
+✅ Reward: 45.51 ± 3.69
+⚠️ Cost:   53.32 ± 1.01
+🔍 Q_c Initial: -229.23 ± 7.89
+💰 Q_c Final:    -227.74 ± 0.66
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.5000
+• eta:         -400
+• lr:          0.001
+• steps:       200
+✅ Reward: 44.27 ± 1.77
+⚠️ Cost:   53.74 ± 0.24
+🔍 Q_c Initial: -229.37 ± 7.82
+💰 Q_c Final:    -227.91 ± 0.42
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.5000
+• eta:         -400
+• lr:          0.001
+• steps:       300
+✅ Reward: 43.77 ± 1.28
+⚠️ Cost:   53.81 ± 0.17
+🔍 Q_c Initial: -229.41 ± 7.80
+💰 Q_c Final:    -227.96 ± 0.37
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.5000
+• eta:         -400
+• lr:          0.01
+• steps:       100
+✅ Reward: 45.51 ± 3.69
+⚠️ Cost:   53.32 ± 1.01
+🔍 Q_c Initial: -229.23 ± 7.89
+💰 Q_c Final:    -227.74 ± 0.66
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.5000
+• eta:         -400
+• lr:          0.01
+• steps:       200
+✅ Reward: 44.27 ± 1.77
+⚠️ Cost:   53.74 ± 0.24
+🔍 Q_c Initial: -229.37 ± 7.82
+💰 Q_c Final:    -227.91 ± 0.42
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.5000
+• eta:         -400
+• lr:          0.01
+• steps:       300
+✅ Reward: 43.77 ± 1.28
+⚠️ Cost:   53.81 ± 0.17
+🔍 Q_c Initial: -229.41 ± 7.80
+💰 Q_c Final:    -227.96 ± 0.37
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.7000
+• eta:         -300
+• lr:          0.0001
+• steps:       100
+✅ Reward: 45.59 ± 3.84
+⚠️ Cost:   53.31 ± 1.02
+🔍 Q_c Initial: -228.25 ± 5.95
+💰 Q_c Final:    -227.73 ± 0.67
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.7000
+• eta:         -300
+• lr:          0.0001
+• steps:       200
+✅ Reward: 44.29 ± 1.78
+⚠️ Cost:   53.74 ± 0.25
+🔍 Q_c Initial: -228.39 ± 5.87
+💰 Q_c Final:    -227.91 ± 0.42
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.7000
+• eta:         -300
+• lr:          0.0001
+• steps:       300
+✅ Reward: 43.78 ± 1.28
+⚠️ Cost:   53.81 ± 0.17
+🔍 Q_c Initial: -228.44 ± 5.85
+💰 Q_c Final:    -227.96 ± 0.38
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.7000
+• eta:         -300
+• lr:          0.001
+• steps:       100
+✅ Reward: 45.59 ± 3.84
+⚠️ Cost:   53.31 ± 1.02
+🔍 Q_c Initial: -228.25 ± 5.95
+💰 Q_c Final:    -227.73 ± 0.67
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.7000
+• eta:         -300
+• lr:          0.001
+• steps:       200
+✅ Reward: 44.29 ± 1.78
+⚠️ Cost:   53.74 ± 0.25
+🔍 Q_c Initial: -228.39 ± 5.87
+💰 Q_c Final:    -227.91 ± 0.42
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.7000
+• eta:         -300
+• lr:          0.001
+• steps:       300
+✅ Reward: 43.78 ± 1.28
+⚠️ Cost:   53.81 ± 0.17
+🔍 Q_c Initial: -228.44 ± 5.85
+💰 Q_c Final:    -227.96 ± 0.38
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.7000
+• eta:         -300
+• lr:          0.01
+• steps:       100
+✅ Reward: 45.59 ± 3.84
+⚠️ Cost:   53.31 ± 1.02
+🔍 Q_c Initial: -228.25 ± 5.95
+💰 Q_c Final:    -227.73 ± 0.67
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.7000
+• eta:         -300
+• lr:          0.01
+• steps:       200
+✅ Reward: 44.29 ± 1.78
+⚠️ Cost:   53.74 ± 0.25
+🔍 Q_c Initial: -228.39 ± 5.87
+💰 Q_c Final:    -227.91 ± 0.42
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.7000
+• eta:         -300
+• lr:          0.01
+• steps:       300
+✅ Reward: 43.78 ± 1.28
+⚠️ Cost:   53.81 ± 0.17
+🔍 Q_c Initial: -228.44 ± 5.85
+💰 Q_c Final:    -227.96 ± 0.38
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.7000
+• eta:         -350
+• lr:          0.0001
+• steps:       100
+✅ Reward: 45.59 ± 3.84
+⚠️ Cost:   53.31 ± 1.02
+🔍 Q_c Initial: -228.25 ± 5.95
+💰 Q_c Final:    -227.73 ± 0.67
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.7000
+• eta:         -350
+• lr:          0.0001
+• steps:       200
+✅ Reward: 44.29 ± 1.78
+⚠️ Cost:   53.74 ± 0.25
+🔍 Q_c Initial: -228.39 ± 5.87
+💰 Q_c Final:    -227.91 ± 0.42
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.7000
+• eta:         -350
+• lr:          0.0001
+• steps:       300
+✅ Reward: 43.78 ± 1.28
+⚠️ Cost:   53.81 ± 0.17
+🔍 Q_c Initial: -228.44 ± 5.85
+💰 Q_c Final:    -227.96 ± 0.38
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.7000
+• eta:         -350
+• lr:          0.001
+• steps:       100
+✅ Reward: 45.59 ± 3.84
+⚠️ Cost:   53.31 ± 1.02
+🔍 Q_c Initial: -228.25 ± 5.95
+💰 Q_c Final:    -227.73 ± 0.67
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.7000
+• eta:         -350
+• lr:          0.001
+• steps:       200
+✅ Reward: 44.29 ± 1.78
+⚠️ Cost:   53.74 ± 0.25
+🔍 Q_c Initial: -228.39 ± 5.87
+💰 Q_c Final:    -227.91 ± 0.42
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.7000
+• eta:         -350
+• lr:          0.001
+• steps:       300
+✅ Reward: 43.78 ± 1.28
+⚠️ Cost:   53.81 ± 0.17
+🔍 Q_c Initial: -228.44 ± 5.85
+💰 Q_c Final:    -227.96 ± 0.38
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.7000
+• eta:         -350
+• lr:          0.01
+• steps:       100
+✅ Reward: 45.59 ± 3.84
+⚠️ Cost:   53.31 ± 1.02
+🔍 Q_c Initial: -228.25 ± 5.95
+💰 Q_c Final:    -227.73 ± 0.67
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.7000
+• eta:         -350
+• lr:          0.01
+• steps:       200
+✅ Reward: 44.29 ± 1.78
+⚠️ Cost:   53.74 ± 0.25
+🔍 Q_c Initial: -228.39 ± 5.87
+💰 Q_c Final:    -227.91 ± 0.42
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.7000
+• eta:         -350
+• lr:          0.01
+• steps:       300
+✅ Reward: 43.78 ± 1.28
+⚠️ Cost:   53.81 ± 0.17
+🔍 Q_c Initial: -228.44 ± 5.85
+💰 Q_c Final:    -227.96 ± 0.38
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.7000
+• eta:         -400
+• lr:          0.0001
+• steps:       100
+✅ Reward: 45.59 ± 3.84
+⚠️ Cost:   53.31 ± 1.02
+🔍 Q_c Initial: -228.25 ± 5.95
+💰 Q_c Final:    -227.73 ± 0.67
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.7000
+• eta:         -400
+• lr:          0.0001
+• steps:       200
+✅ Reward: 44.29 ± 1.78
+⚠️ Cost:   53.74 ± 0.25
+🔍 Q_c Initial: -228.39 ± 5.87
+💰 Q_c Final:    -227.91 ± 0.42
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.7000
+• eta:         -400
+• lr:          0.0001
+• steps:       300
+✅ Reward: 43.78 ± 1.28
+⚠️ Cost:   53.81 ± 0.17
+🔍 Q_c Initial: -228.44 ± 5.85
+💰 Q_c Final:    -227.96 ± 0.38
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.7000
+• eta:         -400
+• lr:          0.001
+• steps:       100
+✅ Reward: 45.59 ± 3.84
+⚠️ Cost:   53.31 ± 1.02
+🔍 Q_c Initial: -228.25 ± 5.95
+💰 Q_c Final:    -227.73 ± 0.67
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.7000
+• eta:         -400
+• lr:          0.001
+• steps:       200
+✅ Reward: 44.29 ± 1.78
+⚠️ Cost:   53.74 ± 0.25
+🔍 Q_c Initial: -228.39 ± 5.87
+💰 Q_c Final:    -227.91 ± 0.42
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.7000
+• eta:         -400
+• lr:          0.001
+• steps:       300
+✅ Reward: 43.78 ± 1.28
+⚠️ Cost:   53.81 ± 0.17
+🔍 Q_c Initial: -228.44 ± 5.85
+💰 Q_c Final:    -227.96 ± 0.38
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.7000
+• eta:         -400
+• lr:          0.01
+• steps:       100
+✅ Reward: 45.59 ± 3.84
+⚠️ Cost:   53.31 ± 1.02
+🔍 Q_c Initial: -228.25 ± 5.95
+💰 Q_c Final:    -227.73 ± 0.67
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.7000
+• eta:         -400
+• lr:          0.01
+• steps:       200
+✅ Reward: 44.29 ± 1.78
+⚠️ Cost:   53.74 ± 0.25
+🔍 Q_c Initial: -228.39 ± 5.87
+💰 Q_c Final:    -227.91 ± 0.42
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.7000
+• eta:         -400
+• lr:          0.01
+• steps:       300
+✅ Reward: 43.78 ± 1.28
+⚠️ Cost:   53.81 ± 0.17
+🔍 Q_c Initial: -228.44 ± 5.85
+💰 Q_c Final:    -227.96 ± 0.38
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.9000
+• eta:         -300
+• lr:          0.0001
+• steps:       100
+✅ Reward: 45.67 ± 3.99
+⚠️ Cost:   53.31 ± 1.02
+🔍 Q_c Initial: -226.47 ± 2.41
+💰 Q_c Final:    -227.73 ± 0.68
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.9000
+• eta:         -300
+• lr:          0.0001
+• steps:       200
+✅ Reward: 44.30 ± 1.80
+⚠️ Cost:   53.74 ± 0.25
+🔍 Q_c Initial: -226.61 ± 2.32
+💰 Q_c Final:    -227.90 ± 0.42
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.9000
+• eta:         -300
+• lr:          0.0001
+• steps:       300
+✅ Reward: 43.78 ± 1.28
+⚠️ Cost:   53.81 ± 0.17
+🔍 Q_c Initial: -226.65 ± 2.30
+💰 Q_c Final:    -227.96 ± 0.38
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.9000
+• eta:         -300
+• lr:          0.001
+• steps:       100
+✅ Reward: 45.67 ± 3.99
+⚠️ Cost:   53.31 ± 1.02
+🔍 Q_c Initial: -226.47 ± 2.41
+💰 Q_c Final:    -227.73 ± 0.68
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.9000
+• eta:         -300
+• lr:          0.001
+• steps:       200
+✅ Reward: 44.30 ± 1.80
+⚠️ Cost:   53.74 ± 0.25
+🔍 Q_c Initial: -226.61 ± 2.32
+💰 Q_c Final:    -227.90 ± 0.42
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.9000
+• eta:         -300
+• lr:          0.001
+• steps:       300
+✅ Reward: 43.78 ± 1.28
+⚠️ Cost:   53.81 ± 0.17
+🔍 Q_c Initial: -226.65 ± 2.30
+💰 Q_c Final:    -227.96 ± 0.38
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.9000
+• eta:         -300
+• lr:          0.01
+• steps:       100
+✅ Reward: 45.67 ± 3.99
+⚠️ Cost:   53.31 ± 1.02
+🔍 Q_c Initial: -226.47 ± 2.41
+💰 Q_c Final:    -227.73 ± 0.68
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.9000
+• eta:         -300
+• lr:          0.01
+• steps:       200
+✅ Reward: 44.30 ± 1.80
+⚠️ Cost:   53.74 ± 0.25
+🔍 Q_c Initial: -226.61 ± 2.32
+💰 Q_c Final:    -227.90 ± 0.42
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.9000
+• eta:         -300
+• lr:          0.01
+• steps:       300
+✅ Reward: 43.78 ± 1.28
+⚠️ Cost:   53.81 ± 0.17
+🔍 Q_c Initial: -226.65 ± 2.30
+💰 Q_c Final:    -227.96 ± 0.38
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.9000
+• eta:         -350
+• lr:          0.0001
+• steps:       100
+✅ Reward: 45.67 ± 3.99
+⚠️ Cost:   53.31 ± 1.02
+🔍 Q_c Initial: -226.47 ± 2.41
+💰 Q_c Final:    -227.73 ± 0.68
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.9000
+• eta:         -350
+• lr:          0.0001
+• steps:       200
+✅ Reward: 44.30 ± 1.80
+⚠️ Cost:   53.74 ± 0.25
+🔍 Q_c Initial: -226.61 ± 2.32
+💰 Q_c Final:    -227.90 ± 0.42
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.9000
+• eta:         -350
+• lr:          0.0001
+• steps:       300
+✅ Reward: 43.78 ± 1.28
+⚠️ Cost:   53.81 ± 0.17
+🔍 Q_c Initial: -226.65 ± 2.30
+💰 Q_c Final:    -227.96 ± 0.38
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.9000
+• eta:         -350
+• lr:          0.001
+• steps:       100
+✅ Reward: 45.67 ± 3.99
+⚠️ Cost:   53.31 ± 1.02
+🔍 Q_c Initial: -226.47 ± 2.41
+💰 Q_c Final:    -227.73 ± 0.68
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.9000
+• eta:         -350
+• lr:          0.001
+• steps:       200
+✅ Reward: 44.30 ± 1.80
+⚠️ Cost:   53.74 ± 0.25
+🔍 Q_c Initial: -226.61 ± 2.32
+💰 Q_c Final:    -227.90 ± 0.42
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.9000
+• eta:         -350
+• lr:          0.001
+• steps:       300
+✅ Reward: 43.78 ± 1.28
+⚠️ Cost:   53.81 ± 0.17
+🔍 Q_c Initial: -226.65 ± 2.30
+💰 Q_c Final:    -227.96 ± 0.38
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.9000
+• eta:         -350
+• lr:          0.01
+• steps:       100
+✅ Reward: 45.67 ± 3.99
+⚠️ Cost:   53.31 ± 1.02
+🔍 Q_c Initial: -226.47 ± 2.41
+💰 Q_c Final:    -227.73 ± 0.68
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.9000
+• eta:         -350
+• lr:          0.01
+• steps:       200
+✅ Reward: 44.30 ± 1.80
+⚠️ Cost:   53.74 ± 0.25
+🔍 Q_c Initial: -226.61 ± 2.32
+💰 Q_c Final:    -227.90 ± 0.42
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.9000
+• eta:         -350
+• lr:          0.01
+• steps:       300
+✅ Reward: 43.78 ± 1.28
+⚠️ Cost:   53.81 ± 0.17
+🔍 Q_c Initial: -226.65 ± 2.30
+💰 Q_c Final:    -227.96 ± 0.38
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.9000
+• eta:         -400
+• lr:          0.0001
+• steps:       100
+✅ Reward: 45.67 ± 3.99
+⚠️ Cost:   53.31 ± 1.02
+🔍 Q_c Initial: -226.47 ± 2.41
+💰 Q_c Final:    -227.73 ± 0.68
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.9000
+• eta:         -400
+• lr:          0.0001
+• steps:       200
+✅ Reward: 44.30 ± 1.80
+⚠️ Cost:   53.74 ± 0.25
+🔍 Q_c Initial: -226.61 ± 2.32
+💰 Q_c Final:    -227.90 ± 0.42
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.9000
+• eta:         -400
+• lr:          0.0001
+• steps:       300
+✅ Reward: 43.78 ± 1.28
+⚠️ Cost:   53.81 ± 0.17
+🔍 Q_c Initial: -226.65 ± 2.30
+💰 Q_c Final:    -227.96 ± 0.38
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.9000
+• eta:         -400
+• lr:          0.001
+• steps:       100
+✅ Reward: 45.67 ± 3.99
+⚠️ Cost:   53.31 ± 1.02
+🔍 Q_c Initial: -226.47 ± 2.41
+💰 Q_c Final:    -227.73 ± 0.68
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.9000
+• eta:         -400
+• lr:          0.001
+• steps:       200
+✅ Reward: 44.30 ± 1.80
+⚠️ Cost:   53.74 ± 0.25
+🔍 Q_c Initial: -226.61 ± 2.32
+💰 Q_c Final:    -227.90 ± 0.42
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.9000
+• eta:         -400
+• lr:          0.001
+• steps:       300
+✅ Reward: 43.78 ± 1.28
+⚠️ Cost:   53.81 ± 0.17
+🔍 Q_c Initial: -226.65 ± 2.30
+💰 Q_c Final:    -227.96 ± 0.38
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.9000
+• eta:         -400
+• lr:          0.01
+• steps:       100
+✅ Reward: 45.67 ± 3.99
+⚠️ Cost:   53.31 ± 1.02
+🔍 Q_c Initial: -226.47 ± 2.41
+💰 Q_c Final:    -227.73 ± 0.68
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.9000
+• eta:         -400
+• lr:          0.01
+• steps:       200
+✅ Reward: 44.30 ± 1.80
+⚠️ Cost:   53.74 ± 0.25
+🔍 Q_c Initial: -226.61 ± 2.32
+💰 Q_c Final:    -227.90 ± 0.42
+
+🎯 Task: raisearms-m-m
+📌 Hyperparameters:
+• lambda_init: 0.9000
+• eta:         -400
+• lr:          0.01
+• steps:       300
+✅ Reward: 43.78 ± 1.28
+⚠️ Cost:   53.81 ± 0.17
+🔍 Q_c Initial: -226.65 ± 2.30
+💰 Q_c Final:    -227.96 ± 0.38
