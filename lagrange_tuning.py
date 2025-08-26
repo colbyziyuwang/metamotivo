@@ -170,8 +170,8 @@ if __name__ == "__main__":
                             lambda_min_t = lambda_t
                         lambda_t = 0.5 * (lambda_min_t + lambda_max_t)
                     else: # baseline
-                        sign = torch.sign(Q.mean() - eta)        # +1 if Q>η, -1 if Q<η
-                        # heuristic: move against the sign to push Q toward η
+                        sign = -1 * torch.sign(Q.mean() - eta)        # -1 if Q>η, +1 if Q<η
+                        # heuristic: move towards the sign to push Q toward η
                         lambda_t.add_(sign * step_size)
                         if abs(Q.mean() - eta) < threshold:
                             break
