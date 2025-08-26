@@ -1,0 +1,135 @@
+
+🎯 Task: move-ego-0-0
+✅ Reward: 276.19 ± 0.00
+
+🎯 Task: move-ego-low-0-0
+✅ Reward: 203.13 ± 0.00
+
+🎯 Task: headstand
+✅ Reward: 50.76 ± 0.00
+
+🎯 Task: move-ego-0-2
+✅ Reward: 262.13 ± 0.00
+
+🎯 Task: move-ego-0-4
+✅ Reward: 253.37 ± 0.00
+
+🎯 Task: move-ego--90-2
+✅ Reward: 212.58 ± 0.00
+
+🎯 Task: move-ego--90-4
+✅ Reward: 211.78 ± 0.00
+
+🎯 Task: move-ego-90-2
+✅ Reward: 228.23 ± 0.00
+
+🎯 Task: move-ego-90-4
+✅ Reward: 183.50 ± 0.00
+
+🎯 Task: move-ego-180-2
+✅ Reward: 220.58 ± 0.00
+
+🎯 Task: move-ego-180-4
+✅ Reward: 206.45 ± 0.00
+
+🎯 Task: move-ego-low-0-2
+✅ Reward: 242.46 ± 0.00
+
+🎯 Task: move-ego-low--90-2
+✅ Reward: 244.20 ± 0.00
+
+🎯 Task: move-ego-low-90-2
+✅ Reward: 234.53 ± 0.00
+
+🎯 Task: move-ego-low-180-2
+✅ Reward: 105.46 ± 0.00
+
+🎯 Task: jump-2
+✅ Reward: 39.80 ± 0.00
+
+🎯 Task: rotate-x--5-0.8
+✅ Reward: 23.47 ± 0.00
+
+🎯 Task: rotate-x-5-0.8
+✅ Reward: 0.23 ± 0.00
+
+🎯 Task: rotate-y--5-0.8
+✅ Reward: 201.27 ± 0.00
+
+🎯 Task: rotate-y-5-0.8
+✅ Reward: 163.93 ± 0.00
+
+🎯 Task: rotate-z--5-0.8
+✅ Reward: 115.29 ± 0.00
+
+🎯 Task: rotate-z-5-0.8
+✅ Reward: 131.20 ± 0.00
+
+🎯 Task: raisearms-l-l
+✅ Reward: 272.47 ± 0.00
+
+🎯 Task: raisearms-l-m
+✅ Reward: 265.58 ± 0.00
+
+🎯 Task: raisearms-l-h
+✅ Reward: 215.62 ± 0.00
+
+🎯 Task: raisearms-m-l
+✅ Reward: 86.96 ± 0.00
+
+🎯 Task: raisearms-m-m
+✅ Reward: 270.52 ± 0.00
+
+🎯 Task: raisearms-m-h
+✅ Reward: 241.24 ± 0.00
+
+🎯 Task: raisearms-h-l
+✅ Reward: 44.84 ± 0.00
+
+🎯 Task: raisearms-h-m
+✅ Reward: 222.28 ± 0.00
+
+🎯 Task: raisearms-h-h
+✅ Reward: 261.03 ± 0.00
+
+🎯 Task: crouch-0
+✅ Reward: 238.12 ± 0.00
+
+🎯 Task: sitonground
+✅ Reward: 192.11 ± 0.00
+
+🎯 Task: lieonground-up
+✅ Reward: 214.40 ± 0.00
+
+🎯 Task: lieonground-down
+✅ Reward: 205.30 ± 0.00
+
+🎯 Task: split-0.5
+✅ Reward: 253.77 ± 0.00
+
+🎯 Task: split-1
+✅ Reward: 134.10 ± 0.00
+
+🎯 Task: crawl-0.4-0-u
+✅ Reward: 111.33 ± 0.00
+
+🎯 Task: crawl-0.4-2-u
+✅ Reward: 25.89 ± 0.00
+
+🎯 Task: crawl-0.5-0-u
+✅ Reward: 111.01 ± 0.00
+
+🎯 Task: crawl-0.5-2-u
+✅ Reward: 26.50 ± 0.00
+
+🎯 Task: crawl-0.4-0-d
+✅ Reward: 207.46 ± 0.00
+
+🎯 Task: crawl-0.4-2-d
+✅ Reward: 7.49 ± 0.00
+
+🎯 Task: crawl-0.5-0-d
+✅ Reward: 119.85 ± 0.00
+
+🎯 Task: crawl-0.5-2-d
+✅ Reward: 29.37 ± 0.00

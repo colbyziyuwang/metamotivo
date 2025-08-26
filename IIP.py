@@ -102,17 +102,18 @@ if __name__ == "__main__":
                     sample_idx = np.random.randint(len(hist))
                     obs_sample, reward_sample = hist[sample_idx]
 
-                    # 7) Compute distance from z*:
+                    # 7) Compute distance from IIP_z:
                     back_embed = model.backward_map(obs_sample)
-                    dist = (back_embed * reward_sample - z_star).pow(2).sum(dim=-1, keepdim=True).sqrt()
-                    threshold = 0.1
+                    dist = (back_embed * reward_sample - IIP_z).pow(2).sum(dim=-1, keepdim=True).sqrt()
+                    threshold = 100 # want to maximize dist
+                    eps = 0.01
 
-                    if (abs(dist - threshold) < threshold):
+                    if (abs(dist - threshold) < eps):
                         break
                     elif (dist > threshold):
                         lambda_min_t = lambda_t
                     elif (dist < threshold):
-                        lambda_max= lambda_t
+                        lambda_max_t = lambda_t
                     lambda_t = 0.5 * (lambda_min_t + lambda_max_t)
 
                 # Final rollout

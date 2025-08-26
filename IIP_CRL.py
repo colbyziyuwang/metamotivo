@@ -147,12 +147,12 @@ if __name__ == "__main__":
                     sample_idx = np.random.randint(len(hist))
                     obs_sample, reward_sample = hist[sample_idx]
 
-                    # Compute distance from z*:
+                    # Compute distance from c_z
                     back_embed = model.backward_map(obs_sample)
-                    dist = (back_embed * reward_sample - z_star).pow(2).sum(dim=-1, keepdim=True).sqrt()
+                    dist = (back_embed * reward_sample - c_z).pow(2).sum(dim=-1, keepdim=True).sqrt()
 
                     # Compute modified Q value
-                    Q = Q - w * dist
+                    Q = Q + w * dist # Note Q is negative of cost; adding means we reduce cost
 
                     # Store initial Q_c values
                     if step == 0: q_c_initials.append(Q.mean().item())
