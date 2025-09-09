@@ -117,7 +117,9 @@ if __name__ == "__main__":
                 def write_metric(name, values):
                     mean = np.mean(values)
                     std = np.std(values)
-                    f.write(f"{name}: {mean:.2f} ± {std:.2f}\n")
+                    line = f"{name}: {mean:.2f} ± {std:.2f}\n"
+                    print(line.strip())         # Show in nohup.out
+                    f.write(line)               # Save to file
 
                 write_metric("reward_z1_env1", rewards_z1_env1)
                 write_metric("reward_z1_env2", rewards_z1_env2)
