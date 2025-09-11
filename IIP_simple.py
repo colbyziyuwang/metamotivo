@@ -55,7 +55,17 @@ if __name__ == "__main__":
 
     output_file = f"IIP_output_({METHOD}).txt"
 
-    task_combos = [("headstand", "rotate-x--5-0.8")] # 5
+    threshold = 5
+
+    task_combos = [("move-ego-90-4", "rotate-y-5-0.8")]
+
+    # [("move-ego-low-0-2", "raisearms-l-l")] # 5 (good demo)
+    # [("jump-2", "rotate-y--5-0.8")] # 10 (nice demo)
+    # [("move-ego-180-4", "raisearms-l-l")] # 10 (ok)
+    # [("move-ego-180-2", "raisearms-l-l")] # 10 (ok)
+    # [("rotate-y--5-0.8", "raisearms-l-l")] # 10 (good demo)
+
+
     # [("headstand", "rotate-z--5-0.8")] # 5
     # [("jump-2", "raisearms-m-m")] # 5 (best demo)
     # [("move-ego--90-2", "raisearms-h-l")] # 11
@@ -111,7 +121,6 @@ if __name__ == "__main__":
                     # print(lambda_t)
 
                     # Set a threshold reward
-                    threshold = 5.0
                     eps = 0.1
 
                     if (abs(reward_total - threshold) < eps):

@@ -12,7 +12,7 @@ from metamotivo.buffers.buffers import DictBuffer
 from utils import set_seed
 
 os.environ["OMP_NUM_THREADS"] = "1"
-METHOD = "bisection"
+METHOD = "baseline" # bisection, baseline (step-based)
 random.seed(42)
 
 def evaluate_reward(env, rew_model, skill_z, seed):
@@ -66,9 +66,6 @@ if __name__ == "__main__":
                 f.write(f"task1: {task1}\n")
                 f.write(f"task2: {task2}\n")
 
-                z1 = rew_model.reward_inference(task1)
-                z2 = rew_model.reward_inference(task2)
-
                 rewards_z1_env1 = []
                 rewards_z1_env2 = []
                 rewards_iip_env1 = []
@@ -76,6 +73,9 @@ if __name__ == "__main__":
 
                 for seed in range(5):
                     set_seed(seed)
+
+                    z1 = rew_model.reward_inference(task1)
+                    z2 = rew_model.reward_inference(task2)
 
                     env1, _ = make_humenv(num_envs=1, task=task1, state_init="Default", seed=seed,
                                           wrappers=[gymnasium.wrappers.FlattenObservation])
@@ -92,17 +92,31 @@ if __name__ == "__main__":
                     # Bisection search for lambda
                     lambda_min, lambda_max = -1.0, 1.0
                     lambda_t = 0.5 * (lambda_min + lambda_max)
+                    
+                    # Define step size for baseline method
+                    step_size = 0.01
 
                     for step in range(100):
                         z_iip = z1 - lambda_t * z2
                         reward_iip = evaluate_reward(env2, rew_model, z_iip, seed)
-                        if abs(reward_iip - threshold) < 0.1:
-                            break
-                        elif reward_iip > threshold:
-                            lambda_min = lambda_t
-                        else:
-                            lambda_max = lambda_t
-                        lambda_t = 0.5 * (lambda_min + lambda_max)
+                        if METHOD == "bisection":
+                            if abs(reward_iip - threshold) < 0.1:
+                                break
+                            elif reward_iip > threshold:
+                                lambda_min = lambda_t # increase lambda
+                            else:
+                                lambda_max = lambda_t
+                            lambda_t = 0.5 * (lambda_min + lambda_max)
+                        elif METHOD == "baseline":
+                            if abs(reward_iip - threshold) < 0.1:
+                                break
+                            elif reward_iip > threshold:
+                                lambda_t += step_size
+                            else:
+                                lambda_t -= step_size
+                            
+                            # clamp to between min and max
+                            lambda_t = max(min(lambda_t, lambda_max), lambda_min)
 
                     final_z_iip = z1 - lambda_t * z2
                     r3 = evaluate_reward(env1, rew_model, final_z_iip, seed)
